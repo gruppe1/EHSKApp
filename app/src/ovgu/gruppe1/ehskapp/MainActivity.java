@@ -1,6 +1,7 @@
 package ovgu.gruppe1.ehskapp;
 
 import android.os.Bundle;
+
 import com.actionbarsherlock.app.SherlockActivity;
 
 public class MainActivity extends SherlockActivity {
