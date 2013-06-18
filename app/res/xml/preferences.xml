@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    
+    <PreferenceCategory android:title="User">
+        <EditTextPreference android:key="Code" android:title="code" android:enabled="true" android:selectable="true" android:defaultValue="asdfasdfasd" android:summary="kjbkjbsdf"/>
+        <ListPreference android:title="Vormittag" android:key="time1" android:entries="@array/time1" android:entryValues="@array/time1Value"/>
+        <ListPreference android:title="mittag" android:key="time2" android:entries="@array/time2" android:entryValues="@array/time2Value"/>
+        <ListPreference android:title="nachmittag" android:key="time3" android:entries="@array/time3" android:entryValues="@array/time3Value"/>
+        <ListPreference android:title="abend" android:key="time4" android:entries="@array/time4" android:entryValues="@array/time4Value"/>
+        <RingtonePreference android:ringtoneType="ringtone|notification|alarm" android:key="ringtone" android:title="Ringtone"/>
+    </PreferenceCategory>
+
+</PreferenceScreen>
