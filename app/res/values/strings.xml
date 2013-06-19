@@ -7,5 +7,6 @@
     <string name="preferences">Preferences</string>
     <string name="admin">Admin</string>
     <string name="popup">Popup</string>
+    <string name="txt_popup_choose_times">Please choose one time of each row, in whitch you want to make a new entry.</string>
 
 </resources>

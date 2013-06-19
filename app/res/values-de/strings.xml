@@ -7,5 +7,6 @@
     <string name="preferences">Einstellungen</string>
     <string name="admin">Admin</string>
     <string name="popup">Popup</string>
+    <string name="txt_popup_choose_times">Bitte wählen Sie aus jeder Zeile eine Zeit in der Sie an die Eintragung erinnert werden möchten.</string>
 
 </resources>
