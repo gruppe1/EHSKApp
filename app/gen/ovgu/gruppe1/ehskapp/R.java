@@ -34,17 +34,19 @@ public final class R {
         public static final int ic_launcher=0x7f020000;
     }
     public static final class id {
-        public static final int action_settings=0x7f0a0006;
+        public static final int action_settings=0x7f0a0007;
         public static final int btn_admin=0x7f0a0002;
         public static final int btn_popup=0x7f0a0003;
         public static final int btn_preferences=0x7f0a0001;
         public static final int btn_x=0x7f0a0004;
+        public static final int editText1=0x7f0a0005;
         public static final int linearLayout1=0x7f0a0000;
-        public static final int settings_text_view=0x7f0a0005;
+        public static final int settings_text_view=0x7f0a0006;
     }
     public static final class layout {
         public static final int activity_main=0x7f030000;
-        public static final int show_settings_layout=0x7f030001;
+        public static final int initial=0x7f030001;
+        public static final int show_settings_layout=0x7f030002;
     }
     public static final class menu {
         public static final int activity_main=0x7f090000;
@@ -68,17 +70,6 @@ public final class R {
             res/values-vXX/styles.xml, while customizations related to
             backward-compatibility can go here.
         
-
-        Base application theme for API 11+. This theme completely replaces
-        AppBaseTheme from res/values/styles.xml on API 11+ devices.
-    
- API 11 theme customizations can go here. 
-
-        Base application theme for API 14+. This theme completely replaces
-        AppBaseTheme from BOTH res/values/styles.xml and
-        res/values-v11/styles.xml on API 14+ devices.
-    
- API 14 theme customizations can go here. 
          */
         public static final int AppBaseTheme=0x7f080000;
         /**  Application theme. 

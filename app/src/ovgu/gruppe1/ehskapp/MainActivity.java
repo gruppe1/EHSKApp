@@ -14,13 +14,14 @@ public class MainActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
-		
+
 		Button btn_preferences = (Button) findViewById(R.id.btn_preferences);
 		btn_preferences.setOnClickListener(new OnClickListener() {
-			
+
 			@Override
 			public void onClick(View v) {
-				Intent intent = new Intent(MainActivity.this, QuickPrefsActivity.class);
+				Intent intent = new Intent(MainActivity.this,
+						QuickPrefsActivity.class);
 				startActivity(intent);
 			}
 		});
