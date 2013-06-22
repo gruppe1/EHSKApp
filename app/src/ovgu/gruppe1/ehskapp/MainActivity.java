@@ -1,12 +1,16 @@
 package ovgu.gruppe1.ehskapp;
 
+import java.io.FileNotFoundException;
+
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Environment;
 import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.Toast;
 
 public class MainActivity extends Activity {
 
@@ -20,9 +24,25 @@ public class MainActivity extends Activity {
 
 			@Override
 			public void onClick(View v) {
-				Intent intent = new Intent(MainActivity.this,
+
+				String[] str1 = { "Code", "Datum", "Alarmzeit", "Antwortzeit",
+						"Abbruch", "Kontakte", "Stunden", "Minuten" };
+				String[] str2 = { "lbrht", "22.06.2013", "21:23", "21:24", "0",
+						"0", "0", "0" };
+				try {
+					CSVWriter.writeLine(str1, Environment.getExternalStorageDirectory().getPath()+"/Probandencode.csv");
+					CSVWriter.writeLine(str2, Environment.getExternalStorageDirectory().getPath()+"/Probandencode.csv");
+				} catch (FileNotFoundException e) {
+					// TODO Auto-generated catch block
+					Toast.makeText(getApplicationContext(), "External SD card not mounted", Toast.LENGTH_LONG).show();
+					e.printStackTrace();				
+				}
+				
+				
+				
+				/*Intent intent = new Intent(MainActivity.this,
 						QuickPrefsActivity.class);
-				startActivity(intent);
+				startActivity(intent);*/
 			}
 		});
 	}
