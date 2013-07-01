@@ -39,7 +39,13 @@ public final class R {
         public static final int time_toggle_bg=0x7f020001;
     }
     public static final class id {
-        public static final int action_settings=0x7f0b0018;
+        public static final int EditText01=0x7f0b0015;
+        public static final int EditText02=0x7f0b0017;
+        public static final int EditText03=0x7f0b001c;
+        public static final int EditText04=0x7f0b001d;
+        public static final int TextView01=0x7f0b001a;
+        public static final int TextView02=0x7f0b0019;
+        public static final int action_settings=0x7f0b001e;
         public static final int btn_admin=0x7f0b0002;
         public static final int btn_popup=0x7f0b0003;
         public static final int btn_preferences=0x7f0b0001;
@@ -59,16 +65,18 @@ public final class R {
         public static final int btn_time_23=0x7f0b0014;
         public static final int btn_time_9=0x7f0b0006;
         public static final int btn_x=0x7f0b0004;
+        public static final int editText1=0x7f0b0016;
         public static final int linearLayout1=0x7f0b0000;
-        public static final int menuitem_popup=0x7f0b0017;
-        public static final int menuitem_preferences=0x7f0b0016;
-        public static final int settings_text_view=0x7f0b0015;
+        public static final int settings_text_view=0x7f0b001b;
         public static final int textView1=0x7f0b0005;
+        public static final int textView2=0x7f0b0018;
     }
     public static final class layout {
         public static final int activity_main=0x7f030000;
         public static final int popup=0x7f030001;
-        public static final int show_settings_layout=0x7f030002;
+        public static final int question_layout=0x7f030002;
+        public static final int show_settings_layout=0x7f030003;
+        public static final int user_code_layout=0x7f030004;
     }
     public static final class menu {
         public static final int activity_main=0x7f0a0000;

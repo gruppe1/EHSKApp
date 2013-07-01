@@ -24,6 +24,7 @@
         <activity android:name="QuickPrefsActivity"></activity>
         <activity android:name="ShowSettingsActivity"></activity>
         <activity android:name="PopupActivity"></activity>
+        <activity android:name="QuestionsActivity"></activity>
     </application>
 
 </manifest>

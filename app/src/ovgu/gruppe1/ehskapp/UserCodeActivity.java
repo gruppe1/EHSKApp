@@ -6,8 +6,8 @@ import android.os.Bundle;
 public class UserCodeActivity extends Activity {
     
 	@Override
-	public void onCreate(Bundle savedInstanceState) {
+	protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.question_layout);
+        setContentView(R.layout.user_code_layout);
     }
 }
