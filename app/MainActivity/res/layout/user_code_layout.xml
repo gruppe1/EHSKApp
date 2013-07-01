@@ -2,6 +2,71 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent" >
-    
+
+    <EditText
+        android:id="@+id/editText1"
+        android:layout_width="66dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="174dp"
+        android:ems="10" >
+
+        <requestFocus />
+    </EditText>
+
+    <EditText
+        android:id="@+id/EditText01"
+        android:layout_width="66dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/editText1"
+        android:layout_alignBottom="@+id/editText1"
+        android:layout_toRightOf="@+id/editText1"
+        android:ems="10" />
+
+    <EditText
+        android:id="@+id/EditText02"
+        android:layout_width="66dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/EditText01"
+        android:layout_alignBottom="@+id/EditText01"
+        android:layout_toRightOf="@+id/EditText01"
+        android:ems="10" />
+
+    <EditText
+        android:id="@+id/EditText03"
+        android:layout_width="66dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/EditText02"
+        android:layout_alignBottom="@+id/EditText02"
+        android:layout_toRightOf="@+id/EditText02"
+        android:ems="10" />
+
+    <EditText
+        android:id="@+id/EditText04"
+        android:layout_width="66dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/EditText03"
+        android:layout_alignBottom="@+id/EditText03"
+        android:layout_toRightOf="@+id/EditText03"
+        android:ems="10" />
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:text="Bitte generieren Sie ihren Probanden Code!
+Code
+-
+Verschlüsselung:
+1. Dritter Buchstabe des Vornamens der Mutter
+2. Dritter Buchstabe des Vornamens des Vaters
+3. Dritter Buchstabe des Geburtsortes
+4. Dritter Buchstabe der aktuellen Straße (Hauptwohnsitz)
+5. Dritter Buchstabe des Geburtsmonats"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textSize="10sp" />
 
 </RelativeLayout>

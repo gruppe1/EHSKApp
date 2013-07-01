@@ -36,9 +36,11 @@ public final class R {
     public static final class id {
         public static final int EditText01=0x7f0a0005;
         public static final int EditText02=0x7f0a0007;
+        public static final int EditText03=0x7f0a000d;
+        public static final int EditText04=0x7f0a000e;
         public static final int TextView01=0x7f0a000b;
         public static final int TextView02=0x7f0a000a;
-        public static final int action_settings=0x7f0a000d;
+        public static final int action_settings=0x7f0a000f;
         public static final int btn_admin=0x7f0a0002;
         public static final int btn_popup=0x7f0a0003;
         public static final int btn_preferences=0x7f0a0001;
