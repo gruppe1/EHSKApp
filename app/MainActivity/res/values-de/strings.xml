@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">EHSKApp</string>
+    <string name="action_settings">Einstellungen</string>
+    <string name="hello_world">Hallo Welt</string>
+    <string name="preferences">Einstellungen</string>
+    <string name="admin">Admin</string>
+    <string name="popup">Popup</string>
+
+</resources>
