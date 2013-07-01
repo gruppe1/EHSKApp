@@ -4,7 +4,6 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
@@ -21,18 +20,8 @@ public class MainActivity extends Activity {
 			
 			@Override
 			public void onClick(View v) {
-				Intent mainIntent = new Intent(MainActivity.this, QuickPrefsActivity.class);
-				startActivity(mainIntent);
-			}
-		});
-		
-		Button btn_popup = (Button) findViewById(R.id.btn_popup);
-		btn_popup.setOnClickListener(new OnClickListener() {
-			
-			@Override
-			public void onClick(View v) {
-				Intent popupIntent = new Intent(MainActivity.this, PopupActivity.class);
-				startActivity(popupIntent);
+				Intent intent = new Intent(MainActivity.this, QuickPrefsActivity.class);
+				startActivity(intent);
 			}
 		});
 	}
@@ -43,19 +32,4 @@ public class MainActivity extends Activity {
 		getMenuInflater().inflate(R.menu.activity_main, menu);
 		return true;
 	}
-	@Override
-	public boolean onOptionsItemSelected(MenuItem item) {
-	    switch(item.getItemId()) {
-	        case R.id.menuitem_preferences:
-	            Intent intentPreferences = new Intent(MainActivity.this, QuickPrefsActivity.class);
-	            startActivity(intentPreferences);
-	            return true;
-	        case R.id.menuitem_popup:
-	        	Intent intentPopup = new Intent(MainActivity.this, PopupActivity.class);
-	            startActivity(intentPopup);
-	            return true;
-	    }
-
-	    return super.onOptionsItemSelected(item);
-	}   
 }
