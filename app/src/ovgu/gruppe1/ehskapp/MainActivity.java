@@ -20,9 +20,24 @@ public class MainActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 
+		Button btn_usercode = (Button) findViewById(R.id.btn_usercode);
+		btn_usercode.setOnClickListener(new OnClickListener() {
+
+
+			@Override
+			public void onClick(View v) {
+				Intent popupIntent = new Intent(MainActivity.this, UserCodeActivity.class);
+				startActivity(popupIntent);
+			}
+		});
+		
+		
+		
+		
 		Button btn_preferences = (Button) findViewById(R.id.btn_preferences);
 		btn_preferences.setOnClickListener(new OnClickListener() {
-
+		
+			
 			@Override
 			public void onClick(View v) {
 
@@ -54,6 +69,17 @@ public class MainActivity extends Activity {
 			@Override
 			public void onClick(View v) {
 				Intent popupIntent = new Intent(MainActivity.this, PopupActivity.class);
+				startActivity(popupIntent);
+			}
+		});
+		
+		Button btn_questions = (Button) findViewById(R.id.btn_questions);
+		btn_questions.setOnClickListener(new OnClickListener() {
+
+
+			@Override
+			public void onClick(View v) {
+				Intent popupIntent = new Intent(MainActivity.this, QuestionsActivity.class);
 				startActivity(popupIntent);
 			}
 		});

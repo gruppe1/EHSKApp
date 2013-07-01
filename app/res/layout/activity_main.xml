@@ -14,16 +14,16 @@
         android:orientation="vertical" >
 
         <Button
+            android:id="@+id/btn_usercode"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/usercode" />
+        
+        <Button
             android:id="@+id/btn_preferences"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/preferences" />
-
-        <Button
-            android:id="@+id/btn_admin"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/admin" />
 
         <Button
             android:id="@+id/btn_popup"
@@ -32,10 +32,10 @@
             android:text="@string/popup" />
 
         <Button
-            android:id="@+id/btn_x"
+            android:id="@+id/btn_questions"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Button" />
+            android:text="@string/questions" />
 
     </LinearLayout>
 

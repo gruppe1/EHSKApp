@@ -17,7 +17,7 @@
             android:layout_height="wrap_content"
             android:gravity="center_horizontal"
             android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="@string/txt_popup_choose_times" />
+            android:text="@string/popup" />
 
         <LinearLayout
             android:layout_width="wrap_content"

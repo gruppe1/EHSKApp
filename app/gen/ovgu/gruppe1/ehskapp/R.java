@@ -46,9 +46,9 @@ public final class R {
         public static final int TextView01=0x7f0b001a;
         public static final int TextView02=0x7f0b0019;
         public static final int action_settings=0x7f0b001e;
-        public static final int btn_admin=0x7f0b0002;
         public static final int btn_popup=0x7f0b0003;
-        public static final int btn_preferences=0x7f0b0001;
+        public static final int btn_preferences=0x7f0b0002;
+        public static final int btn_questions=0x7f0b0004;
         public static final int btn_time_10=0x7f0b0007;
         public static final int btn_time_11=0x7f0b0008;
         public static final int btn_time_12=0x7f0b0009;
@@ -64,7 +64,7 @@ public final class R {
         public static final int btn_time_22=0x7f0b0013;
         public static final int btn_time_23=0x7f0b0014;
         public static final int btn_time_9=0x7f0b0006;
-        public static final int btn_x=0x7f0b0004;
+        public static final int btn_usercode=0x7f0b0001;
         public static final int editText1=0x7f0b0016;
         public static final int linearLayout1=0x7f0b0000;
         public static final int settings_text_view=0x7f0b001b;
@@ -84,12 +84,13 @@ public final class R {
     }
     public static final class string {
         public static final int action_settings=0x7f080001;
-        public static final int admin=0x7f080004;
+        public static final int admin=0x7f080007;
         public static final int app_name=0x7f080000;
         public static final int hello_world=0x7f080002;
         public static final int popup=0x7f080005;
         public static final int preferences=0x7f080003;
-        public static final int txt_popup_choose_times=0x7f080006;
+        public static final int questions=0x7f080006;
+        public static final int usercode=0x7f080004;
     }
     public static final class style {
         /** 
