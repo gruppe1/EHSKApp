@@ -67,5 +67,24 @@
         android:layout_alignBottom="@+id/TextView02"
         android:layout_toRightOf="@+id/EditText01"
         android:text="Minuten" />
+
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/editText1"
+        android:layout_marginTop="48dp"
+        android:text="Speichern" />
+
+    <Button
+        android:id="@+id/Button01"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/button1"
+        android:text="Abbruch" />
     
 </RelativeLayout>
