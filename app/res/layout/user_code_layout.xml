@@ -57,16 +57,23 @@
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:text="Bitte generieren Sie ihren Probanden Code!
-Code
--
-Verschlüsselung:
-1. Dritter Buchstabe des Vornamens der Mutter
-2. Dritter Buchstabe des Vornamens des Vaters
-3. Dritter Buchstabe des Geburtsortes
-4. Dritter Buchstabe der aktuellen Straße (Hauptwohnsitz)
-5. Dritter Buchstabe des Geburtsmonats"
+        android:text="Bitte generieren Sie ihren Probanden-Code! \n
+			1. Dritter Buchstabe des Vornamens der Mutter \n
+			2. Dritter Buchstabe des Vornamens des Vaters \n
+			3. Dritter Buchstabe des Geburtsortes \n
+			4. Dritter Buchstabe der aktuellen Straße (Hauptwohnsitz) \n
+			5. Dritter Buchstabe des Geburtsmonats"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:textSize="10sp" />
+
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/editText1"
+        android:layout_marginTop="49dp"
+        android:text="Probanden-Code speichern" />
 
 </RelativeLayout>

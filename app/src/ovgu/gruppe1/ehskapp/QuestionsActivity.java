@@ -51,7 +51,7 @@ public class QuestionsActivity extends Activity implements OnKeyListener {
 				if(hours == null || minutes == null || numberOfContacts==null){
 					showErrorMessager("Fehlende Eingabe");
 				} else {
-					String[] line = new String[8];
+					String[] line = new String[8];//data which will be written into a csv file
 					line[0]="";//user code
 					Date date = new Date();
 					line[1]= new SimpleDateFormat("dd.MM.yyyy").format(date);//date
@@ -61,9 +61,8 @@ public class QuestionsActivity extends Activity implements OnKeyListener {
 					line[5]=numberOfContacts;
 					line[6]=hours;
 					line[7]=minutes;
-					String filename = "";
+					String filename = ".csv";
 					try {
-						new CSVWriter();
 						CSVWriter.writeLine(line, filename);
 					} catch (FileNotFoundException e) {
 						e.printStackTrace();
@@ -73,11 +72,14 @@ public class QuestionsActivity extends Activity implements OnKeyListener {
 			}
 		});
         
+        /**
+         * action when the user aborts the question 
+         */
         abortButton.setOnClickListener(new OnClickListener() {
 			
 			@Override
 			public void onClick(View v) {
-				String[] line = new String[8];
+				String[] line = new String[8];//data which will be written into a csv file
 				line[0]="";//user code
 				Date date = new Date();
 				line[1]= new SimpleDateFormat("dd.MM.yyyy").format(date);//date
@@ -87,9 +89,8 @@ public class QuestionsActivity extends Activity implements OnKeyListener {
 				line[5]="-1";
 				line[6]="-1";
 				line[7]="-1";
-				String filename = "";
+				String filename = ".csv";
 				try {
-					new CSVWriter();
 					CSVWriter.writeLine(line, filename);
 				} catch (FileNotFoundException e) {
 					e.printStackTrace();
@@ -100,6 +101,10 @@ public class QuestionsActivity extends Activity implements OnKeyListener {
 
     }
 	
+	/**
+	 * shows alert dialogue, for debugging purposes
+	 * @param message
+	 */
 	private void showErrorMessager(String message){
 		AlertDialog alertDialog = new AlertDialog.Builder(this).create();
 		alertDialog.setTitle("Fehler");
@@ -108,11 +113,18 @@ public class QuestionsActivity extends Activity implements OnKeyListener {
 
 	}
 	
+	/**
+	 * closes the activity
+	 */
 	private void finishActivity(){
 		this.finish();
 	}
 
 	@Override
+	/**
+	 * onKey event listener for the text fields
+	 * get the string and store it in the variables
+	 */
 	public boolean onKey(View v, int keyCode, KeyEvent event) {
 		
 		if(v==numberOfContactsView){
