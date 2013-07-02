@@ -72,28 +72,11 @@ public class MainActivity extends Activity {
 			@Override
 			public void onClick(View v) {
 
-				/*String[] str1 = { "Code", "Datum", "Alarmzeit", "Antwortzeit",
-						"Abbruch", "Kontakte", "Stunden", "Minuten" };
-				String[] str2 = { "lbrht", "22.06.2013", "21:23", "21:24", "0",
-						"0", "0", "0" };
-				try {
-					CSVWriter.writeLine(str1, Environment.getExternalStorageDirectory().getPath()+"/Probandencode.csv");
-					CSVWriter.writeLine(str2, Environment.getExternalStorageDirectory().getPath()+"/Probandencode.csv");
-				} catch (FileNotFoundException e) {
-					// TODO Auto-generated catch block
-					Toast.makeText(getApplicationContext(), "External SD card not mounted", Toast.LENGTH_LONG).show();
-					e.printStackTrace();				
-				}*/
-				
-				
-//				
-//				Intent intent = new Intent(MainActivity.this,
-//						QuickPrefsActivity.class);
-//				startActivity(intent);
+
 			}
 		});
 	
-		Button btn_popup = (Button) findViewById(R.id.btn_popup);
+		Button btn_popup = (Button) findViewById(R.id.btn_time_chooser);
 		btn_popup.setOnClickListener(new OnClickListener() {
 
 

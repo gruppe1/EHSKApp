@@ -47,7 +47,6 @@ public final class R {
         public static final int TextView01=0x7f0b000b;
         public static final int TextView02=0x7f0b000a;
         public static final int action_settings=0x7f0b0020;
-        public static final int btn_popup=0x7f0b0003;
         public static final int btn_preferences=0x7f0b0002;
         public static final int btn_questions=0x7f0b0004;
         public static final int btn_time_10=0x7f0b0010;
@@ -65,6 +64,7 @@ public final class R {
         public static final int btn_time_22=0x7f0b001c;
         public static final int btn_time_23=0x7f0b001d;
         public static final int btn_time_9=0x7f0b000f;
+        public static final int btn_time_chooser=0x7f0b0003;
         public static final int btn_usercode=0x7f0b0001;
         public static final int button1=0x7f0b000c;
         public static final int editText1=0x7f0b0006;
