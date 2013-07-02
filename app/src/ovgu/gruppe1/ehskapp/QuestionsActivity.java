@@ -7,6 +7,7 @@ import java.util.Date;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.View.OnKeyListener;
@@ -33,7 +34,7 @@ public class QuestionsActivity extends Activity implements OnKeyListener {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.question_layout);
         
-		SharedPreferences preferences = this.getSharedPreferences("usercode", MODE_PRIVATE);
+		SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this.getBaseContext());
 		final String usercode = preferences.getString("usercode", "");
         
         numberOfContactsView = (EditText) findViewById(R.id.editText1);

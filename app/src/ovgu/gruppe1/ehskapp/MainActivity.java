@@ -5,8 +5,10 @@ import java.io.FileNotFoundException;
 import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.SharedPreferences.Editor;
 import android.os.Bundle;
 import android.os.Environment;
+import android.preference.PreferenceManager;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -22,8 +24,20 @@ public class MainActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 		
-		SharedPreferences preferences = this.getSharedPreferences("usercode", MODE_PRIVATE);
+		SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this.getBaseContext());
 		String usercode = preferences.getString("usercode", "");
+		Editor edit = preferences.edit();
+				
+		if (usercode.length() != 0) {
+			
+			String data = usercode + ".csv";
+			if (true) {
+				edit.clear();
+				edit.commit();
+			}
+			
+		}
+		
 		
 		if (usercode.length() == 0) {
 			
