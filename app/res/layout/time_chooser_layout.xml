@@ -7,30 +7,30 @@
         android:id="@+id/textView1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
         android:gravity="center_horizontal"
         android:text="@string/txt_popup_choose_times"
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
-    <LinearLayout
-        android:id="@+id/linearLayout1"
+    <TableLayout
+        android:id="@+id/tableLayout1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentRight="true"
         android:layout_below="@+id/textView1"
-        android:gravity="center_horizontal"
-        android:orientation="vertical" >
+        android:layout_marginTop="20dp" >
 
-        <LinearLayout
-            android:layout_width="270dp"
-            android:layout_height="70dp"
-            android:layout_weight="0.00" >
+        <TableRow
+            android:id="@+id/tableRow1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
 
             <ToggleButton
                 android:id="@+id/btn_time_9"
                 android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="0.35"
+                android:layout_height="50dp"
+                android:layout_weight="0.25"
                 android:background="@drawable/time_toggle_bg"
                 android:text="9"
                 android:textOff="9:00"
@@ -40,7 +40,7 @@
                 android:id="@+id/btn_time_10"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:layout_weight="0.30"
+                android:layout_weight="0.25"
                 android:background="@drawable/time_toggle_bg"
                 android:text="10"
                 android:textOff="10:00"
@@ -50,7 +50,7 @@
                 android:id="@+id/btn_time_11"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:layout_weight="0.29"
+                android:layout_weight="0.25"
                 android:background="@drawable/time_toggle_bg"
                 android:text="11"
                 android:textOff="11:00"
@@ -58,25 +58,26 @@
 
             <ToggleButton
                 android:id="@+id/btn_time_12"
-                android:layout_width="83dp"
+                android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:layout_weight="0.35"
+                android:layout_weight="0.25"
                 android:background="@drawable/time_toggle_bg"
                 android:text="12"
                 android:textOff="12:00"
                 android:textOn="12:00" />
-        </LinearLayout>
+        </TableRow>
 
-        <LinearLayout
-            android:layout_width="match_parent"
+        <TableRow
+            android:id="@+id/tableRow2"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="0.01" >
+            android:layout_marginTop="5dp" >
 
             <ToggleButton
                 android:id="@+id/btn_time_13"
                 android:layout_width="wrap_content"
-                android:layout_height="52dp"
-                android:layout_weight="0.09"
+                android:layout_height="50dp"
+                android:layout_weight="0.33"
                 android:background="@drawable/time_toggle_bg"
                 android:text="X"
                 android:textOff="13:00"
@@ -85,7 +86,8 @@
             <ToggleButton
                 android:id="@+id/btn_time_14"
                 android:layout_width="wrap_content"
-                android:layout_height="44dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.33"
                 android:background="@drawable/time_toggle_bg"
                 android:text="X"
                 android:textOff="14:00"
@@ -94,23 +96,25 @@
             <ToggleButton
                 android:id="@+id/btn_time_15"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="0.33"
                 android:background="@drawable/time_toggle_bg"
                 android:text="X"
                 android:textOff="15:00"
                 android:textOn="15:00" />
-        </LinearLayout>
+        </TableRow>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_weight="0.00" >
+        <TableRow
+            android:id="@+id/tableRow3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp" >
 
             <ToggleButton
                 android:id="@+id/btn_time_16"
                 android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="0.08"
+                android:layout_height="50dp"
+                android:layout_weight="0.25"
                 android:background="@drawable/time_toggle_bg"
                 android:text="X"
                 android:textOff="16:00"
@@ -119,7 +123,8 @@
             <ToggleButton
                 android:id="@+id/btn_time_17"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="0.25"
                 android:background="@drawable/time_toggle_bg"
                 android:text="X"
                 android:textOff="17:00"
@@ -128,7 +133,8 @@
             <ToggleButton
                 android:id="@+id/btn_time_18"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="0.25"
                 android:background="@drawable/time_toggle_bg"
                 android:text="X"
                 android:textOff="18:00"
@@ -137,23 +143,25 @@
             <ToggleButton
                 android:id="@+id/btn_time_19"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="0.25"
                 android:background="@drawable/time_toggle_bg"
                 android:text="X"
                 android:textOff="19:00"
                 android:textOn="19:00" />
-        </LinearLayout>
+        </TableRow>
 
-        <LinearLayout
-            android:layout_width="match_parent"
+        <TableRow
+            android:id="@+id/tableRow4"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="0.00" >
+            android:layout_marginTop="5dp" >
 
             <ToggleButton
                 android:id="@+id/btn_time_20"
                 android:layout_width="wrap_content"
-                android:layout_height="56dp"
-                android:layout_weight="0.49"
+                android:layout_height="50dp"
+                android:layout_weight="0.25"
                 android:background="@drawable/time_toggle_bg"
                 android:text="X"
                 android:textOff="20:00"
@@ -162,8 +170,8 @@
             <ToggleButton
                 android:id="@+id/btn_time_21"
                 android:layout_width="wrap_content"
-                android:layout_height="44dp"
-                android:layout_weight="0.32"
+                android:layout_height="match_parent"
+                android:layout_weight="0.25"
                 android:background="@drawable/time_toggle_bg"
                 android:text="X"
                 android:textOff="21:00"
@@ -172,8 +180,8 @@
             <ToggleButton
                 android:id="@+id/btn_time_22"
                 android:layout_width="wrap_content"
-                android:layout_height="45dp"
-                android:layout_weight="0.33"
+                android:layout_height="match_parent"
+                android:layout_weight="0.25"
                 android:background="@drawable/time_toggle_bg"
                 android:text="X"
                 android:textOff="22:00"
@@ -182,30 +190,23 @@
             <ToggleButton
                 android:id="@+id/btn_time_23"
                 android:layout_width="wrap_content"
-                android:layout_height="52dp"
-                android:layout_weight="0.27"
+                android:layout_height="match_parent"
+                android:layout_weight="0.25"
                 android:background="@drawable/time_toggle_bg"
                 android:text="X"
                 android:textOff="23:00"
                 android:textOn="23:00" />
-        </LinearLayout>
-    </LinearLayout>
+        </TableRow>
+    </TableLayout>
 
-    <LinearLayout
+    <Button
+        android:id="@+id/btn_save_times"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
-        android:layout_below="@+id/linearLayout1"
-        android:layout_marginRight="88dp"
-        android:layout_marginTop="48dp"
-        android:orientation="vertical" >
-
-        <Button
-            android:id="@+id/btn_save_times"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="0.01"
-            android:text="Speichern" />
-    </LinearLayout>
+        android:layout_below="@+id/tableLayout1"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="65dp"
+        android:layout_weight="0.01"
+        android:text="Speichern" />
 
 </RelativeLayout>
