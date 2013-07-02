@@ -14,11 +14,21 @@ import android.widget.Button;
 import android.widget.Toast;
 
 public class MainActivity extends Activity {
-
+	
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
+		
+		String usercode = null;
+		usercode = "";
+		if (usercode.length() == 0) {
+			
+			Intent popupIntent = new Intent(MainActivity.this, UserCodeActivity.class);
+			startActivity(popupIntent);
+		}
+				
 
 		Button btn_usercode = (Button) findViewById(R.id.btn_usercode);
 		btn_usercode.setOnClickListener(new OnClickListener() {
@@ -86,7 +96,7 @@ public class MainActivity extends Activity {
 
 		
 	}
-
+	
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
