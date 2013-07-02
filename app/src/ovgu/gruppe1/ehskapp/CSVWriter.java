@@ -1,5 +1,6 @@
 package ovgu.gruppe1.ehskapp;
 
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -20,20 +21,25 @@ public class CSVWriter  {
 	private static void writeLine(String[] line, String filename, char separator) throws FileNotFoundException {
 		if(!isExternalStorageWritable())
 			throw new FileNotFoundException("No external storage mounted!");
-			
+		
 		FileWriter fw = null;
 		
 		try {
 			fw = new FileWriter(filename, true);
 			
-			for(int i=0; i<line.length; i++) {
-				
-				fw.write(line[i]);
-				if(i != line.length-1)
-					fw.write(separator);
-			}
+			if (line != null) {
 
-			fw.write("\n");
+				for (int i = 0; i < line.length; i++) {
+
+					fw.write(line[i]);
+					if (i != line.length - 1)
+						fw.write(separator);
+				}
+
+				fw.write("\n");
+			} else {
+				fw.write("");
+			}
 			fw.flush();
 						
 		} catch (FileNotFoundException e) {
@@ -56,6 +62,19 @@ public class CSVWriter  {
 	
 	public static void writeLine(String[] line, String filename) throws FileNotFoundException {
 		writeLine(line, filename, ';');
+	}
+	
+	public static void makeDirectoryOnSD(String path) throws IOException {
+		if(!isExternalStorageWritable())
+			throw new FileNotFoundException("No external storage mounted!");
+		
+		if(path == null)
+			return;
+		
+		File folder = new File(Environment.getExternalStorageDirectory() + "/" + path);
+		if(!folder.mkdirs()) {
+			throw new IOException("Can't create Directory");
+		}
 	}
 	
 	private static boolean isExternalStorageWritable() {
