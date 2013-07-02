@@ -65,7 +65,7 @@ public class CSVWriter  {
 	}
 	
 	public static boolean existsFile(String path) {
-		File file = new File(Environment.getExternalStorageDirectory() + "/" + path);
+		File file = new File(Environment.getExternalStorageDirectory().getPath() + "/" + path);
 		return file.exists();
 	}
 	
@@ -76,7 +76,7 @@ public class CSVWriter  {
 		if(path == null)
 			return;
 		
-		File folder = new File(Environment.getExternalStorageDirectory() + "/" + path);
+		File folder = new File(Environment.getExternalStorageDirectory().getPath() + "/" + path);
 		if(!folder.mkdirs()) {
 			throw new IOException("Can't create Directory");
 		}
