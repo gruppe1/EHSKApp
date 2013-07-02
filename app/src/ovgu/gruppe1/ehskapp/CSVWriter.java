@@ -64,6 +64,11 @@ public class CSVWriter  {
 		writeLine(line, filename, ';');
 	}
 	
+	public static boolean existsFile(String path) {
+		File file = new File(Environment.getExternalStorageDirectory() + "/" + path);
+		return file.exists();
+	}
+	
 	public static void makeDirectoryOnSD(String path) throws IOException {
 		if(!isExternalStorageWritable())
 			throw new FileNotFoundException("No external storage mounted!");
