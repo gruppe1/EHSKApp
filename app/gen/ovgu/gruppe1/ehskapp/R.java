@@ -39,39 +39,38 @@ public final class R {
         public static final int time_toggle_bg=0x7f020001;
     }
     public static final class id {
-        public static final int Button01=0x7f0b000d;
-        public static final int EditText01=0x7f0b0005;
-        public static final int EditText02=0x7f0b0007;
-        public static final int EditText03=0x7f0b001e;
-        public static final int EditText04=0x7f0b001f;
-        public static final int TextView01=0x7f0b000b;
-        public static final int TextView02=0x7f0b000a;
-        public static final int action_settings=0x7f0b0020;
-        public static final int btn_preferences=0x7f0b0002;
-        public static final int btn_questions=0x7f0b0004;
-        public static final int btn_time_10=0x7f0b0010;
-        public static final int btn_time_11=0x7f0b0011;
-        public static final int btn_time_12=0x7f0b0012;
-        public static final int btn_time_13=0x7f0b0013;
-        public static final int btn_time_14=0x7f0b0014;
-        public static final int btn_time_15=0x7f0b0015;
-        public static final int btn_time_16=0x7f0b0016;
-        public static final int btn_time_17=0x7f0b0017;
-        public static final int btn_time_18=0x7f0b0018;
-        public static final int btn_time_19=0x7f0b0019;
-        public static final int btn_time_20=0x7f0b001a;
-        public static final int btn_time_21=0x7f0b001b;
-        public static final int btn_time_22=0x7f0b001c;
-        public static final int btn_time_23=0x7f0b001d;
-        public static final int btn_time_9=0x7f0b000f;
-        public static final int btn_time_chooser=0x7f0b0003;
-        public static final int btn_usercode=0x7f0b0001;
-        public static final int button1=0x7f0b000c;
-        public static final int editText1=0x7f0b0006;
-        public static final int linearLayout1=0x7f0b0000;
-        public static final int settings_text_view=0x7f0b000e;
-        public static final int textView1=0x7f0b0008;
-        public static final int textView2=0x7f0b0009;
+        public static final int Button01=0x7f0a000d;
+        public static final int EditText01=0x7f0a0005;
+        public static final int EditText02=0x7f0a0007;
+        public static final int EditText03=0x7f0a001e;
+        public static final int EditText04=0x7f0a001f;
+        public static final int TextView01=0x7f0a000b;
+        public static final int TextView02=0x7f0a000a;
+        public static final int btn_preferences=0x7f0a0002;
+        public static final int btn_questions=0x7f0a0004;
+        public static final int btn_time_10=0x7f0a0010;
+        public static final int btn_time_11=0x7f0a0011;
+        public static final int btn_time_12=0x7f0a0012;
+        public static final int btn_time_13=0x7f0a0013;
+        public static final int btn_time_14=0x7f0a0014;
+        public static final int btn_time_15=0x7f0a0015;
+        public static final int btn_time_16=0x7f0a0016;
+        public static final int btn_time_17=0x7f0a0017;
+        public static final int btn_time_18=0x7f0a0018;
+        public static final int btn_time_19=0x7f0a0019;
+        public static final int btn_time_20=0x7f0a001a;
+        public static final int btn_time_21=0x7f0a001b;
+        public static final int btn_time_22=0x7f0a001c;
+        public static final int btn_time_23=0x7f0a001d;
+        public static final int btn_time_9=0x7f0a000f;
+        public static final int btn_time_chooser=0x7f0a0003;
+        public static final int btn_usercode=0x7f0a0001;
+        public static final int button1=0x7f0a000c;
+        public static final int editText1=0x7f0a0006;
+        public static final int linearLayout1=0x7f0a0000;
+        public static final int settings_text_view=0x7f0a000e;
+        public static final int textView1=0x7f0a0008;
+        public static final int textView2=0x7f0a0009;
     }
     public static final class layout {
         public static final int activity_main=0x7f030000;
@@ -79,10 +78,6 @@ public final class R {
         public static final int show_settings_layout=0x7f030002;
         public static final int time_chooser_layout=0x7f030003;
         public static final int user_code_layout=0x7f030004;
-    }
-    public static final class menu {
-        public static final int activity_main=0x7f0a0000;
-        public static final int main=0x7f0a0001;
     }
     public static final class string {
         public static final int action_settings=0x7f080001;

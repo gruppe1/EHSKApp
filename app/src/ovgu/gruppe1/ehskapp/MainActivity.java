@@ -101,27 +101,5 @@ public class MainActivity extends Activity {
 		
 	}
 	
-	@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
-		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.activity_main, menu);
-		return true;
-	}
-	
-	/*public boolean onOptionsItemSelected(MenuItem item) {
-	    switch(item.getItemId()) {
-	        case R.id.menuitem_preferences:
-	            Intent intentPreferences = new Intent(MainActivity.this, QuickPrefsActivity.class);
-	            startActivity(intentPreferences);
-	            return true;
-	        case R.id.menuitem_popup:
-	        	Intent intentPopup = new Intent(MainActivity.this, PopupActivity.class);
-	            startActivity(intentPopup);
-	            return true;
-	    }
-
-
-	    return super.onOptionsItemSelected(item);
-	} */
 
 }
