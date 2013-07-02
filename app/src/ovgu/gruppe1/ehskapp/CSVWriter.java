@@ -4,10 +4,13 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
-
 import android.os.Environment;
 
-
+/**
+ * 
+ * @author Gruppe 1
+ *
+ */
 public class CSVWriter  {
 	
 	/**
@@ -60,15 +63,31 @@ public class CSVWriter  {
 			
 	}
 	
+	/**
+	 * 
+	 * @param line
+	 * @param filename
+	 * @throws FileNotFoundException
+	 */
 	public static void writeLine(String[] line, String filename) throws FileNotFoundException {
 		writeLine(line, filename, ';');
 	}
 	
+	/**
+	 * 
+	 * @param path
+	 * @return
+	 */
 	public static boolean existsFile(String path) {
 		File file = new File(Environment.getExternalStorageDirectory().getPath() + "/" + path);
 		return file.exists();
 	}
 	
+	/**
+	 * Add a Directory on SD-card
+	 * @param path
+	 * @throws IOException
+	 */
 	public static void makeDirectoryOnSD(String path) throws IOException {
 		if(!isExternalStorageWritable())
 			throw new FileNotFoundException("No external storage mounted!");
@@ -82,6 +101,10 @@ public class CSVWriter  {
 		}
 	}
 	
+	/**
+	 * 
+	 * @return true if external storage is writable (sd card is mounted), false instead
+	 */
 	private static boolean isExternalStorageWritable() {
 	    String state = Environment.getExternalStorageState();
 	    if (Environment.MEDIA_MOUNTED.equals(state)) {
