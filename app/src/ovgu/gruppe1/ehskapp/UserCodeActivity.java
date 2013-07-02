@@ -3,6 +3,8 @@ package ovgu.gruppe1.ehskapp;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
+import android.content.SharedPreferences;
+import android.content.SharedPreferences.Editor;
 import android.os.Bundle;
 import android.view.KeyEvent;
 import android.view.View;
@@ -39,7 +41,7 @@ public class UserCodeActivity extends Activity implements OnKeyListener {
 			
 			@Override
 			public void onClick(View v) {
-				if(text1 == null || text2 == null || text3 == null || text4 == null || text5 == null){
+				if(text1 == "" || text2 == "" || text3 == "" || text4 == "" || text5 == ""){
 					showErrorMessager("Fehlende Eingabe");
 				} else {
 					finishActivity();
@@ -64,6 +66,12 @@ public class UserCodeActivity extends Activity implements OnKeyListener {
 	 * closes the activity
 	 */
 	private void finishActivity(){
+		String code = text1+text2+text3+text4+text5;	
+		SharedPreferences preferences = this.getSharedPreferences("usercode", MODE_PRIVATE);
+		Editor edit = preferences.edit();
+		edit.putString("usercode", code);
+		edit.commit();
+		Toast.makeText(this, "Usercode saved", 3000).show();
 		this.finish();
 	}
 
@@ -71,33 +79,39 @@ public class UserCodeActivity extends Activity implements OnKeyListener {
 	public boolean onKey(View v, int keyCode, KeyEvent event) {
 		
 		if(v==textField1){
-			text1 = textField1.getText().toString();
+			String text = textField1.getText().toString();
+			text1 = text;
 			if(text1.length()>1){
 				textField1.setText("" + text1.toCharArray()[0]);
 			}
-		} else
+		} //else
 		
 		if(v==textField2){
-			text2 = textField2.getText().toString();
+			String text = textField2.getText().toString();
+			text2 = text;
 			if(text2.length()>1){
 				textField2.setText("" + text2.toCharArray()[0]);
 			}
-		} else 
+		} //else 
 		
 		if(v==textField3){
-			text3 = textField3.getText().toString();
+			String text = textField3.getText().toString();
+			text3 = text;
 			if(text3.length()>1){
 				textField3.setText("" + text3.toCharArray()[0]);
 			}
-		} else 
+		} //else 
 			
 		if(v==textField4){
-			text4 = textField4.getText().toString();
+			String text = textField4.getText().toString();
+			text4 = text;
 			if(text4.length()>1){
 				textField4.setText("" + text4.toCharArray()[0]);
 			}
-		} else {
-			text5 = textField5.getText().toString();
+		} //else
+		if(v==textField5){
+			String text = textField5.getText().toString();
+			text5 = text;
 			if(text5.length()>1){
 				textField5.setText("" + text5.toCharArray()[0]);
 			}

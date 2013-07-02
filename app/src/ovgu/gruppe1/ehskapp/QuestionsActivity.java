@@ -50,7 +50,7 @@ public class QuestionsActivity extends Activity implements OnKeyListener {
 			
 			@Override
 			public void onClick(View v) {
-				if(hours == null || minutes == null || numberOfContacts==null){
+				if(hours == "" || minutes == "" || numberOfContacts==""){
 					showErrorMessager("Fehlende Eingabe");
 				} else {
 					String[] line = new String[8];//data which will be written into a csv file

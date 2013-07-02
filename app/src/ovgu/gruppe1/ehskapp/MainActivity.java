@@ -4,6 +4,7 @@ import java.io.FileNotFoundException;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Environment;
 import android.view.Menu;
@@ -21,11 +22,12 @@ public class MainActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 		
-		String usercode = null;
-		usercode = "";
+		SharedPreferences preferences = this.getSharedPreferences("usercode", MODE_PRIVATE);
+		String usercode = preferences.getString("usercode", "");
+		
 		if (usercode.length() == 0) {
 			
-			Intent popupIntent = new Intent(MainActivity.this, UserCodeActivity.class);
+			Intent popupIntent = new Intent(this, UserCodeActivity.class);
 			startActivity(popupIntent);
 		}
 				
