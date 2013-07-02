@@ -1,11 +1,14 @@
 package ovgu.gruppe1.ehskapp;
 
+import java.io.FileNotFoundException;
+
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -67,10 +70,18 @@ public class UserCodeActivity extends Activity implements OnKeyListener {
 	 */
 	private void finishActivity(){
 		String code = text1+text2+text3+text4+text5;	
-		SharedPreferences preferences = this.getSharedPreferences("usercode", MODE_PRIVATE);
+		SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this.getBaseContext());
 		Editor edit = preferences.edit();
 		edit.putString("usercode", code);
 		edit.commit();
+		
+		try {
+			CSVWriter.writeLine(null, code + ".csv");
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
 		Toast.makeText(this, "Usercode saved", 3000).show();
 		this.finish();
 	}
