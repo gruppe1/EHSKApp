@@ -1,6 +1,7 @@
 package ovgu.gruppe1.ehskapp;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.os.Bundle;
 import android.view.KeyEvent;
 import android.view.View;
@@ -37,7 +38,7 @@ public class UserCodeActivity extends Activity implements OnKeyListener {
 			@Override
 			public void onClick(View v) {
 				if(text1 == null || text2 == null || text3 == null || text4 == null || text5 == null){
-					
+					showErrorMessager("Fehlende Eingabe");
 				} else {
 					finishActivity();
 				}
@@ -47,6 +48,15 @@ public class UserCodeActivity extends Activity implements OnKeyListener {
         
     }
 
+	private void showErrorMessager(String message){
+		AlertDialog alertDialog = new AlertDialog.Builder(this).create();
+		alertDialog.setTitle("Fehler");
+		alertDialog.setMessage(message);
+		alertDialog.show();
+
+	}
+	
+	
 	/**
 	 * closes the activity
 	 */

@@ -67,8 +67,9 @@ public class QuestionsActivity extends Activity implements OnKeyListener {
 					} catch (FileNotFoundException e) {
 						e.printStackTrace();
 					}
+					finishActivity();
 				}
-				finishActivity();
+				
 			}
 		});
         
@@ -110,7 +111,6 @@ public class QuestionsActivity extends Activity implements OnKeyListener {
 		alertDialog.setTitle("Fehler");
 		alertDialog.setMessage(message);
 		alertDialog.show();
-
 	}
 	
 	/**
