@@ -25,7 +25,7 @@ public class CSVWriter  {
 		FileWriter fw = null;
 		
 		try {
-			fw = new FileWriter(filename, true);
+			fw = new FileWriter(Environment.getExternalStorageDirectory().getPath() + "/" + filename, true);
 			
 			if (line != null) {
 
