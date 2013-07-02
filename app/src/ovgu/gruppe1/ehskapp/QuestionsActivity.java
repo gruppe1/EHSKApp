@@ -12,7 +12,9 @@ import android.view.View;
 import android.view.View.OnKeyListener;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 import android.app.AlertDialog;
+import android.content.Context;
 import android.view.View.OnClickListener;
 
 
@@ -107,10 +109,11 @@ public class QuestionsActivity extends Activity implements OnKeyListener {
 	 * @param message
 	 */
 	private void showErrorMessager(String message){
-		AlertDialog alertDialog = new AlertDialog.Builder(this).create();
-		alertDialog.setTitle("Fehler");
-		alertDialog.setMessage(message);
-		alertDialog.show();
+		Context context = getApplicationContext();
+		int time = 3000;
+		
+		Toast toast = Toast.makeText(context, message, time);
+		toast.show();
 	}
 	
 	/**

@@ -5,9 +5,10 @@
     <string name="action_settings">Settings</string>
     <string name="hello_world">Hello world!</string>
     <string name="preferences">Preferences</string>
-    <string name="usercode">Usercode erstellen</string>
-    <string name="popup">Popup Zeitauswahl</string>
-    <string name="questions">Fragen beantworten</string>
+    <string name="usercode">generate Usercode</string>
+    <string name="popup">Popup</string>
+    <string name="questions">Answer questions</string>
+    <string name="txt_popup_choose_times">Please choose one time of each row, in whitch you want to make a new entry.</string>
     
 
 </resources>
