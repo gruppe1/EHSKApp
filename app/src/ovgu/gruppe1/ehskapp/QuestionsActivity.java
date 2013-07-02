@@ -59,7 +59,7 @@ public class QuestionsActivity extends Activity implements OnKeyListener {
 					showErrorMessager("Fehlende Eingabe");
 				} else {
 					String[] line = new String[8];//data which will be written into a csv file
-					line[0]="";//user code
+					line[0]=usercode;//user code
 					Date date = new Date();
 					line[1]= new SimpleDateFormat("dd.MM.yyyy").format(date);//date
 					line[2]="";//alert time

@@ -9,6 +9,7 @@ import android.content.SharedPreferences.Editor;
 import android.os.Bundle;
 import android.os.Environment;
 import android.preference.PreferenceManager;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -27,17 +28,21 @@ public class MainActivity extends Activity {
 		SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this.getBaseContext());
 		String usercode = preferences.getString("usercode", "");
 		Editor edit = preferences.edit();
+		Log.d("Main", ""+ usercode.length());
 				
 		if (usercode.length() != 0) {
 			
 			String data = usercode + ".csv";
-			if (true) {
+			Log.d("Main", ""+ CSVWriter.existsFile(data));
+			if (CSVWriter.existsFile(data) == false) {
 				edit.clear();
 				edit.commit();
 			}
 			
 		}
 		
+		preferences = PreferenceManager.getDefaultSharedPreferences(this.getBaseContext());
+		usercode = preferences.getString("usercode", "");
 		
 		if (usercode.length() == 0) {
 			
