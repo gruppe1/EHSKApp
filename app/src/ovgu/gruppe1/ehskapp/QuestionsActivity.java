@@ -15,6 +15,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 import android.app.AlertDialog;
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.view.View.OnClickListener;
 
 
@@ -31,6 +32,9 @@ public class QuestionsActivity extends Activity implements OnKeyListener {
 	public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.question_layout);
+        
+		SharedPreferences preferences = this.getSharedPreferences("usercode", MODE_PRIVATE);
+		final String usercode = preferences.getString("usercode", "");
         
         numberOfContactsView = (EditText) findViewById(R.id.editText1);
         hoursView = (EditText) findViewById(R.id.EditText01);
@@ -63,7 +67,7 @@ public class QuestionsActivity extends Activity implements OnKeyListener {
 					line[5]=numberOfContacts;
 					line[6]=hours;
 					line[7]=minutes;
-					String filename = ".csv";
+					String filename = usercode + ".csv";
 					try {
 						CSVWriter.writeLine(line, filename);
 					} catch (FileNotFoundException e) {
