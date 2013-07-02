@@ -10,7 +10,8 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
         android:layout_marginTop="174dp"
-        android:ems="10" >
+        android:ems="10"
+        android:maxLength="1" ><!-- Textfeld für höchstens ein Zeichen -->
 
         <requestFocus />
     </EditText>
@@ -22,7 +23,8 @@
         android:layout_alignBaseline="@+id/editText1"
         android:layout_alignBottom="@+id/editText1"
         android:layout_toRightOf="@+id/editText1"
-        android:ems="10" />
+        android:ems="10"
+        android:maxLength="1" />
 
     <EditText
         android:id="@+id/EditText02"
@@ -31,7 +33,8 @@
         android:layout_alignBaseline="@+id/EditText01"
         android:layout_alignBottom="@+id/EditText01"
         android:layout_toRightOf="@+id/EditText01"
-        android:ems="10" />
+        android:ems="10"
+        android:maxLength="1" />
 
     <EditText
         android:id="@+id/EditText03"
@@ -40,7 +43,8 @@
         android:layout_alignBaseline="@+id/EditText02"
         android:layout_alignBottom="@+id/EditText02"
         android:layout_toRightOf="@+id/EditText02"
-        android:ems="10" />
+        android:ems="10"
+        android:maxLength="1" />
 
     <EditText
         android:id="@+id/EditText04"
@@ -49,7 +53,8 @@
         android:layout_alignBaseline="@+id/EditText03"
         android:layout_alignBottom="@+id/EditText03"
         android:layout_toRightOf="@+id/EditText03"
-        android:ems="10" />
+        android:ems="10"
+        android:maxLength="1" />
 
     <TextView
         android:id="@+id/textView1"
