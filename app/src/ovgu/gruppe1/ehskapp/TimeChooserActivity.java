@@ -1,13 +1,20 @@
 package ovgu.gruppe1.ehskapp;
 
 import android.app.Activity;
+import android.content.Context;
+import android.content.SharedPreferences;
+import android.content.SharedPreferences.Editor;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
+import android.util.Log;
 import android.widget.CompoundButton;
 import android.widget.CompoundButton.OnCheckedChangeListener;
 import android.widget.ToggleButton;
 
-public class PopupActivity extends Activity {
+public class TimeChooserActivity extends Activity {
 
+	protected static final String TAG = "TimeChooserActivity";
+	
 	// Row1
 	ToggleButton btn_9, btn_10, btn_11, btn_12;
 	// Row2
@@ -19,9 +26,8 @@ public class PopupActivity extends Activity {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
-		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.popup);
+		setContentView(R.layout.time_chooser_layout);
 		// Row1
 		btn_9 = (ToggleButton) findViewById(R.id.btn_time_9);
 		btn_10 = (ToggleButton) findViewById(R.id.btn_time_10);
@@ -63,10 +69,15 @@ public class PopupActivity extends Activity {
 		btn_23.setOnCheckedChangeListener(changeCheckerRow4);
 	}
 	
-
+	Context mContext = getBaseContext();
+	SharedPreferences mPrefs = mContext.getSharedPreferences("UserPreferences", Context.MODE_PRIVATE);
+    Editor mEditor = mPrefs.edit();
+    
 	OnCheckedChangeListener changeCheckerRow1 = new OnCheckedChangeListener() {
 	    @Override
 	    public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+	    	mEditor.putInt("time1", Integer.parseInt(buttonView.getText().toString()));
+	    	mEditor.commit();
 	        if (isChecked){
 	            if (buttonView == btn_9) {
 	            	btn_10.setChecked(false);
@@ -89,6 +100,7 @@ public class PopupActivity extends Activity {
 	            	btn_11.setChecked(false);
 	            }
 	        }
+//	        Log.d(TAG, "time1 Preference set: "+PreferenceManager.getDefaultSharedPreferences(getApplicationContext()).getInt("time1", 0));
 	    }
 	};
 	OnCheckedChangeListener changeCheckerRow2 = new OnCheckedChangeListener() {

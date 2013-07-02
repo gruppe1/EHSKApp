@@ -55,10 +55,10 @@ public class MainActivity extends Activity {
 				}*/
 				
 				
-				
-				Intent intent = new Intent(MainActivity.this,
-						QuickPrefsActivity.class);
-				startActivity(intent);
+//				
+//				Intent intent = new Intent(MainActivity.this,
+//						QuickPrefsActivity.class);
+//				startActivity(intent);
 			}
 		});
 	
@@ -68,7 +68,7 @@ public class MainActivity extends Activity {
 
 			@Override
 			public void onClick(View v) {
-				Intent popupIntent = new Intent(MainActivity.this, PopupActivity.class);
+				Intent popupIntent = new Intent(MainActivity.this, TimeChooserActivity.class);
 				startActivity(popupIntent);
 			}
 		});
