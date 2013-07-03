@@ -9,5 +9,7 @@
     <string name="popup">Popup Zeitauswahl</string>
     <string name="questions">Fragen beantworten</string>
     <string name="txt_popup_choose_times">Bitte wählen Sie aus jeder Zeile eine Zeit in der Sie an die Eintragung erinnert werden möchten.</string>
-
+    <string name="pop_up_notification_title_template">Pop up: Fragen</string>
+    <string name="pop_up_notification_placeholder_text_template">Bitte beantworten Sie die Fragen</string>
+    
 </resources>

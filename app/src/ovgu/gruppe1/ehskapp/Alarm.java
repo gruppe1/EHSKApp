@@ -9,20 +9,15 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.Bundle;
 import android.os.SystemClock;
-import android.view.Menu;
-import android.view.View;
+import android.util.Log;
 
 public class Alarm extends Activity {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_main);
-	}
-
-	public void test(View view) {
 		setup();
-		setAlarm(5);
+		snoozeAlarm(1);
 	}
 
 	final static private long ONE_SECOND = 1000;
@@ -31,7 +26,7 @@ public class Alarm extends Activity {
 	final static private long ONE_DAY = ONE_HOUR * 24;
 
 	PendingIntent pi;
-
+	
 	BroadcastReceiver br;
 
 	AlarmManager am;
@@ -42,17 +37,18 @@ public class Alarm extends Activity {
 
 			@Override
 			public void onReceive(Context c, Intent i) {
-
-				// was passiert wenn Alarm ausgeführt wird (Popup)
-
+				
+				Log.d("notification trigger", "called");
+				
+				PopUpNotification.notify(c, "bla", 1);
 			}
 
 		};
 
-		registerReceiver(br, new IntentFilter("com.authorwjf.wakeywakey"));
+		registerReceiver(br, new IntentFilter("ovgu.gruppe1.ehskapp"));
 
 		pi = PendingIntent.getBroadcast(this, 0, new Intent(
-				"com.authorwjf.wakeywakey"), 0);
+				"ovgu.gruppe1.ehskapp"), 0);
 
 		am = (AlarmManager) (this.getSystemService(Context.ALARM_SERVICE));
 
@@ -68,18 +64,25 @@ public class Alarm extends Activity {
 		return time;
 	}
 
-	public void setAlarm(long l) {
-		System.out.println(getTime());
-		System.out.println(l);
-		if (getTime() > l * ONE_HOUR) {
+	public void setAlarm(long hour) {
+
+		if (getTime() > hour * ONE_HOUR) {
 			am.set(AlarmManager.ELAPSED_REALTIME_WAKEUP,
 					SystemClock.elapsedRealtime()
-							+ (ONE_DAY - (getTime() - ONE_HOUR * l)), pi);
+							+ (ONE_DAY - (getTime() - ONE_HOUR * hour)), pi);
 		} else {
 			am.set(AlarmManager.ELAPSED_REALTIME_WAKEUP,
-					SystemClock.elapsedRealtime() + (ONE_HOUR * l - getTime()),
+					SystemClock.elapsedRealtime() + (ONE_HOUR * hour - getTime()),
 					pi);
+			
 		}
+	}
+	
+	public void snoozeAlarm(long minutes) {
+		
+		am.set(AlarmManager.ELAPSED_REALTIME_WAKEUP,
+				SystemClock.elapsedRealtime() + minutes * ONE_MINUTE, pi);
+		
 	}
 
 	protected void onDestroy() {
