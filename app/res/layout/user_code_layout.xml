@@ -4,26 +4,15 @@
     android:layout_height="match_parent" >
 
     <EditText
-        android:id="@+id/editText1"
-        android:layout_width="66dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="174dp"
-        android:ems="10"
-        android:maxLength="1" ><!-- Textfeld für höchstens ein Zeichen -->
-
-        <requestFocus />
-    </EditText>
-
-    <EditText
         android:id="@+id/EditText01"
         android:layout_width="66dp"
         android:layout_height="wrap_content"
         android:layout_alignBaseline="@+id/editText1"
         android:layout_alignBottom="@+id/editText1"
         android:layout_toRightOf="@+id/editText1"
+        android:digits="abcdefghijklmnopqrstuvwxyzöäüßABCDEFGHIJKLMNOPQRSTUVWXYZÖÄÜ"
         android:ems="10"
+        android:inputType="text"
         android:maxLength="1" />
 
     <EditText
@@ -34,6 +23,8 @@
         android:layout_alignBottom="@+id/EditText01"
         android:layout_toRightOf="@+id/EditText01"
         android:ems="10"
+        android:digits="abcdefghijklmnopqrstuvwxyzöäüßABCDEFGHIJKLMNOPQRSTUVWXYZÖÄÜ"
+        android:inputType="text"
         android:maxLength="1" />
 
     <EditText
@@ -44,6 +35,8 @@
         android:layout_alignBottom="@+id/EditText02"
         android:layout_toRightOf="@+id/EditText02"
         android:ems="10"
+        android:digits="abcdefghijklmnopqrstuvwxyzöäüßABCDEFGHIJKLMNOPQRSTUVWXYZÖÄÜ"
+        android:inputType="text"
         android:maxLength="1" />
 
     <EditText
@@ -54,31 +47,42 @@
         android:layout_alignBottom="@+id/EditText03"
         android:layout_toRightOf="@+id/EditText03"
         android:ems="10"
+        android:digits="abcdefghijklmnopqrstuvwxyzöäüßABCDEFGHIJKLMNOPQRSTUVWXYZÖÄÜ"
+        android:inputType="text"
         android:maxLength="1" />
 
     <TextView
         android:id="@+id/textView1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:text="Bitte generieren Sie ihren Probanden-Code! \n
-			1. Dritter Buchstabe des Vornamens der Mutter \n
-			2. Dritter Buchstabe des Vornamens des Vaters \n
-			3. Dritter Buchstabe des Geburtsortes \n
-			4. Dritter Buchstabe der aktuellen Straße (Hauptwohnsitz) \n
-			5. Dritter Buchstabe des Geburtsmonats"
+        android:layout_marginTop="20dp"
+        android:text="Bitte generieren Sie ihren Probanden-Code! \n  1. Dritter Buchstabe des Vornamens der Mutter \n  2. Dritter Buchstabe des Vornamens des Vaters \n  3. Dritter Buchstabe des Geburtsortes \n  4. Dritter Buchstabe der aktuellen Straße (Hauptwohnsitz) \n  5. Dritter Buchstabe des Geburtsmonats"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:textSize="10sp" />
+        android:textSize="15sp" />
 
     <Button
         android:id="@+id/button1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentRight="true"
-        android:layout_below="@+id/editText1"
-        android:layout_marginTop="49dp"
+        android:layout_marginBottom="40dp"
         android:text="Probanden-Code speichern" />
+
+    <EditText
+        android:id="@+id/editText1"
+        android:layout_width="66dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:ems="10"
+        android:digits="abcdefghijklmnopqrstuvwxyzöäüßABCDEFGHIJKLMNOPQRSTUVWXYZÖÄÜ"
+        android:inputType="text"
+        android:maxLength="1" >
+
+        <requestFocus />
+    </EditText>
 
 </RelativeLayout>

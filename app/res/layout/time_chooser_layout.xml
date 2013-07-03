@@ -65,6 +65,7 @@
                 android:text="12"
                 android:textOff="12:00"
                 android:textOn="12:00" />
+
         </TableRow>
 
         <TableRow
@@ -203,10 +204,10 @@
         android:id="@+id/btn_save_times"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentRight="true"
-        android:layout_below="@+id/tableLayout1"
-        android:layout_marginTop="65dp"
+        android:layout_marginBottom="40dp"
         android:layout_weight="0.01"
         android:text="Speichern" />
 
