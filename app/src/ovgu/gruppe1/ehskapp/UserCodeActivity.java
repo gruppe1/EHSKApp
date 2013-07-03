@@ -32,8 +32,8 @@ public class UserCodeActivity extends Activity {
 		textField4 = (EditText) findViewById(R.id.EditText03);
 		textField5 = (EditText) findViewById(R.id.EditText04);
 
-		submitUserCodeButton = (Button) findViewById(R.id.button1);
-		submitUserCodeButton.setOnClickListener(new OnClickListener() {
+		submitUserCodeButton = (Button) findViewById(R.id.btn_save_code);
+		submitUserCodeButton.setOnClickListener(new OnClickListener() { //Error: Null-Pointer-Exception
 
 			@Override
 			public void onClick(View v) {
