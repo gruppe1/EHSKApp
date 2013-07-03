@@ -9,7 +9,14 @@
     <string name="popup">Popup</string>
     <string name="questions">Answer questions</string>
     <string name="txt_popup_choose_times">Please choose one time of each row, in whitch you want to make a new entry.</string>
+<<<<<<< HEAD
     <string name="save">Save</string>
     
+=======
+    <string name="pop_up_notification_title_template">Pop up: Question</string>
+    <string name="pop_up_notification_placeholder_text_template">Please answer the question</string>
+    <string name="action_share">Share</string>
+    <string name="action_reply">Reply</string>
+>>>>>>> origin/working_activities
 
 </resources>

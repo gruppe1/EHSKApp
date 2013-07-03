@@ -7,25 +7,33 @@
     <uses-sdk
         android:minSdkVersion="7"
         android:targetSdkVersion="17" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
-        android:theme="@style/AppTheme">
+        android:theme="@style/AppTheme" >
         <activity
             android:name="ovgu.gruppe1.ehskapp.MainActivity"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="QuestionsActivity"></activity>
-        <activity android:name="UserCodeActivity"></activity>
-        <activity android:name="TimeChooserActivity"></activity>
-        <activity android:name="Alarm"></activity>
+        <activity android:name="ovgu.gruppe1.ehskapp.QuestionsActivity" >
+        </activity>
+        <activity android:name="ovgu.gruppe1.ehskapp.UserCodeActivity" >
+        </activity>
+        <activity android:name="ovgu.gruppe1.ehskapp.TimeChooserActivity" >
+        </activity>
+        <activity android:name="ovgu.gruppe1.ehskapp.Alarm" >
+        </activity>
     </application>
+
+    <uses-permission android:name="android.permission.VIBRATE" />
 
 </manifest>
