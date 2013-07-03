@@ -26,10 +26,16 @@
             android:text="@string/preferences" />
 
         <Button
+            android:id="@+id/btn_alarm"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Alarm" />
+        
+        <Button
             android:id="@+id/btn_time_chooser"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/popup" />
+            android:text="TimeChooser" />
 
         <Button
             android:id="@+id/btn_questions"

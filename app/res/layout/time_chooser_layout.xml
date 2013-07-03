@@ -3,13 +3,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent" >
 
-<<<<<<< HEAD
-    <LinearLayout
-        android:id="@+id/linearLayout1"
-=======
     <TextView
         android:id="@+id/textView1"
->>>>>>> origin/working_activities
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
@@ -208,18 +203,11 @@
         android:id="@+id/btn_save_times"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-<<<<<<< HEAD
-        android:layout_below="@+id/linearLayout1"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="32dp"
-        android:text="@string/save" />
-=======
         android:layout_alignParentLeft="true"
         android:layout_alignParentRight="true"
         android:layout_below="@+id/tableLayout1"
         android:layout_marginTop="65dp"
         android:layout_weight="0.01"
         android:text="Speichern" />
->>>>>>> origin/working_activities
 
 </RelativeLayout>
