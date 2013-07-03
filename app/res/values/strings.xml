@@ -9,6 +9,7 @@
     <string name="popup">Popup</string>
     <string name="questions">Answer questions</string>
     <string name="txt_popup_choose_times">Please choose one time of each row, in whitch you want to make a new entry.</string>
+    <string name="save">Save</string>
     
 
 </resources>

@@ -1,14 +1,21 @@
 package ovgu.gruppe1.ehskapp;
 
+import java.io.FileNotFoundException;
+
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.content.Context;
+import android.content.SharedPreferences;
+import android.content.SharedPreferences.Editor;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.View.OnKeyListener;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 public class UserCodeActivity extends Activity implements OnKeyListener {
 	
@@ -37,7 +44,7 @@ public class UserCodeActivity extends Activity implements OnKeyListener {
 			
 			@Override
 			public void onClick(View v) {
-				if(text1 == null || text2 == null || text3 == null || text4 == null || text5 == null){
+				if(text1 == "" || text2 == "" || text3 == "" || text4 == "" || text5 == ""){
 					showErrorMessager("Fehlende Eingabe");
 				} else {
 					finishActivity();
@@ -49,10 +56,11 @@ public class UserCodeActivity extends Activity implements OnKeyListener {
     }
 
 	private void showErrorMessager(String message){
-		AlertDialog alertDialog = new AlertDialog.Builder(this).create();
-		alertDialog.setTitle("Fehler");
-		alertDialog.setMessage(message);
-		alertDialog.show();
+		Context context = getApplicationContext();
+		int time = 3000;
+		
+		Toast toast = Toast.makeText(context, message, time);
+		toast.show();
 
 	}
 	
@@ -61,6 +69,20 @@ public class UserCodeActivity extends Activity implements OnKeyListener {
 	 * closes the activity
 	 */
 	private void finishActivity(){
+		String code = text1+text2+text3+text4+text5;	
+		SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this.getBaseContext());
+		Editor edit = preferences.edit();
+		edit.putString("usercode", code);
+		edit.commit();
+		
+		try {
+			CSVWriter.writeLine(null, code + ".csv");
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		Toast.makeText(this, "Usercode saved", 3000).show();
 		this.finish();
 	}
 
@@ -68,33 +90,39 @@ public class UserCodeActivity extends Activity implements OnKeyListener {
 	public boolean onKey(View v, int keyCode, KeyEvent event) {
 		
 		if(v==textField1){
-			text1 = textField1.getText().toString();
+			String text = textField1.getText().toString();
+			text1 = text;
 			if(text1.length()>1){
 				textField1.setText("" + text1.toCharArray()[0]);
 			}
-		} else
+		} //else
 		
 		if(v==textField2){
-			text2 = textField2.getText().toString();
+			String text = textField2.getText().toString();
+			text2 = text;
 			if(text2.length()>1){
 				textField2.setText("" + text2.toCharArray()[0]);
 			}
-		} else 
+		} //else 
 		
 		if(v==textField3){
-			text3 = textField3.getText().toString();
+			String text = textField3.getText().toString();
+			text3 = text;
 			if(text3.length()>1){
 				textField3.setText("" + text3.toCharArray()[0]);
 			}
-		} else 
+		} //else 
 			
 		if(v==textField4){
-			text4 = textField4.getText().toString();
+			String text = textField4.getText().toString();
+			text4 = text;
 			if(text4.length()>1){
 				textField4.setText("" + text4.toCharArray()[0]);
 			}
-		} else {
-			text5 = textField5.getText().toString();
+		} //else
+		if(v==textField5){
+			String text = textField5.getText().toString();
+			text5 = text;
 			if(text5.length()>1){
 				textField5.setText("" + text5.toCharArray()[0]);
 			}
