@@ -52,16 +52,18 @@ public class QuestionsActivity extends Activity {
 
 				if (hours.equals("") || minutes.equals("")
 						|| numberOfContacts.equals("")) {
-					showErrorMessager("Fehlende Eingabe");
+					showMessage("Fehlende Eingabe");
 				} else {
 					String[] line = new String[8];// data which will be written
 													// into a csv file
 					line[0] = usercode;// user code
 					Date date = new Date();
-					line[1] = new SimpleDateFormat("dd.MM.yyyy", Locale.getDefault()).format(date);// date
+					line[1] = new SimpleDateFormat("dd.MM.yyyy", Locale
+							.getDefault()).format(date);// date
 					line[2] = "";// alert time
-					line[3] = new SimpleDateFormat("hh:mm", Locale.getDefault()).format(date);// answer
-																			// time
+					line[3] = new SimpleDateFormat("hh:mm", Locale.getDefault())
+							.format(date);// answer
+					// time
 					line[4] = "0";// wasn't aborted
 					line[5] = numberOfContacts;
 					line[6] = hours;
@@ -69,12 +71,13 @@ public class QuestionsActivity extends Activity {
 					String filename = usercode + ".csv";
 					try {
 						CSVWriter.writeLine(line, filename);
+						showMessage("Kontaktzeiten gespeichert");
 					} catch (FileNotFoundException e) {
+						showMessage("Kein externer Speicher vorhanden");
 						e.printStackTrace();
 					}
 					finishActivity();
 				}
-
 			}
 		});
 
@@ -89,8 +92,9 @@ public class QuestionsActivity extends Activity {
 												// a csv file
 				line[0] = usercode;// user code
 				Date date = new Date();
-				line[1] = new SimpleDateFormat("dd.MM.yyyy", Locale.getDefault()).format(date);// date
-				line[2] = "";//TODO: alert time
+				line[1] = new SimpleDateFormat("dd.MM.yyyy", Locale
+						.getDefault()).format(date);// date
+				line[2] = "";// TODO: alert time
 				line[3] = "-77";// answer time
 				line[4] = "1";// was aborted
 				line[5] = "-77";
@@ -100,6 +104,7 @@ public class QuestionsActivity extends Activity {
 				try {
 					CSVWriter.writeLine(line, filename);
 				} catch (FileNotFoundException e) {
+					showMessage("Kein externer Speicher vorhanden");
 					e.printStackTrace();
 				}
 				finishActivity();
@@ -113,7 +118,7 @@ public class QuestionsActivity extends Activity {
 	 * 
 	 * @param message
 	 */
-	private void showErrorMessager(String message) {
+	private void showMessage(String message) {
 		Toast.makeText(getApplicationContext(), message, Toast.LENGTH_LONG)
 				.show();
 	}

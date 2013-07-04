@@ -2,9 +2,7 @@ package ovgu.gruppe1.ehskapp;
 
 import java.io.FileNotFoundException;
 import java.util.Locale;
-
 import android.app.Activity;
-import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
 import android.os.Bundle;
@@ -45,7 +43,7 @@ public class UserCodeActivity extends Activity {
 
 				if (text1.equals("") || text2.equals("") || text3.equals("")
 						|| text4.equals("") || text5.equals("")) {
-					showErrorMessager("Fehlende Eingabe");
+					showMessage("Fehlende Eingabe");
 				} else {
 					finishActivity();
 				}
@@ -54,7 +52,7 @@ public class UserCodeActivity extends Activity {
 
 	}
 
-	private void showErrorMessager(String message) {
+	private void showMessage(String message) {
 		Toast.makeText(getApplicationContext(), message, Toast.LENGTH_LONG).show();
 	}
 
@@ -72,12 +70,12 @@ public class UserCodeActivity extends Activity {
 
 		try {
 			CSVWriter.writeLine(null, code + ".csv");
+			showMessage("Probandencode gespeichert");
 		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
+			showMessage("Kein externer Speicher vorhanden");
 			e.printStackTrace();
 		}
-
-		Toast.makeText(this, "Usercode saved", 3000).show();
+		
 		this.finish();
 	}
 }

@@ -9,27 +9,32 @@ import android.os.Environment;
 /**
  * 
  * @author Gruppe 1
- *
+ * 
  */
-public class CSVWriter  {
-	
+public class CSVWriter {
+
 	/**
-	 * Writes a new line in an existing .csv file, if non exists
-	 * a new one will be created
-	 * @param line stringarray with columns for .csv file
+	 * Writes a new line in an existing .csv file, if non exists a new one will
+	 * be created
+	 * 
+	 * @param line
+	 *            stringarray with columns for .csv file
 	 * @param filename
 	 * @param separator
-	 * @throws FileNotFoundException if no external storage is mounted
+	 * @throws FileNotFoundException
+	 *             if no external storage is mounted
 	 */
-	private static void writeLine(String[] line, String filename, char separator) throws FileNotFoundException {
-		if(!isExternalStorageWritable())
+	private static void writeLine(String[] line, String filename, char separator)
+			throws FileNotFoundException {
+		if (!isExternalStorageWritable())
 			throw new FileNotFoundException("No external storage mounted!");
-		
+
 		FileWriter fw = null;
-		
+
 		try {
-			fw = new FileWriter(Environment.getExternalStorageDirectory().getPath() + "/" + filename, true);
-			
+			fw = new FileWriter(Environment.getExternalStorageDirectory()
+					.getPath() + "/" + filename, true);
+
 			if (line != null) {
 
 				for (int i = 0; i < line.length; i++) {
@@ -44,73 +49,74 @@ public class CSVWriter  {
 				fw.write("");
 			}
 			fw.flush();
-						
+
 		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} finally {
-			if(fw != null)
+			if (fw != null)
 				try {
 					fw.close();
 				} catch (IOException e) {
-					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
 		}
-			
 	}
-	
+
 	/**
 	 * 
 	 * @param line
 	 * @param filename
 	 * @throws FileNotFoundException
 	 */
-	public static void writeLine(String[] line, String filename) throws FileNotFoundException {
+	public static void writeLine(String[] line, String filename)
+			throws FileNotFoundException {
 		writeLine(line, filename, ';');
 	}
-	
+
 	/**
 	 * 
 	 * @param path
 	 * @return
 	 */
 	public static boolean existsFile(String path) {
-		File file = new File(Environment.getExternalStorageDirectory().getPath() + "/" + path);
+		File file = new File(Environment.getExternalStorageDirectory()
+				.getPath() + "/" + path);
 		return file.exists();
 	}
-	
+
 	/**
 	 * Add a Directory on SD-card
+	 * 
 	 * @param path
 	 * @throws IOException
 	 */
 	public static void makeDirectoryOnSD(String path) throws IOException {
-		if(!isExternalStorageWritable())
+		if (!isExternalStorageWritable())
 			throw new FileNotFoundException("No external storage mounted!");
-		
-		if(path == null)
+
+		if (path == null)
 			return;
-		
-		File folder = new File(Environment.getExternalStorageDirectory().getPath() + "/" + path);
-		if(!folder.mkdirs()) {
+
+		File folder = new File(Environment.getExternalStorageDirectory()
+				.getPath() + "/" + path);
+		if (!folder.mkdirs()) {
 			throw new IOException("Can't create Directory");
 		}
 	}
-	
+
 	/**
 	 * 
-	 * @return true if external storage is writable (sd card is mounted), false instead
+	 * @return true if external storage is writable (sd card is mounted), false
+	 *         instead
 	 */
 	private static boolean isExternalStorageWritable() {
-	    String state = Environment.getExternalStorageState();
-	    if (Environment.MEDIA_MOUNTED.equals(state)) {
-	        return true;
-	    }
-	    return false;
+		String state = Environment.getExternalStorageState();
+		if (Environment.MEDIA_MOUNTED.equals(state)) {
+			return true;
+		}
+		return false;
 	}
 
 }
