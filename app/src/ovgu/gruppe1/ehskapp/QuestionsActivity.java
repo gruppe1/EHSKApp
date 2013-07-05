@@ -5,6 +5,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
 import android.app.Activity;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
@@ -26,6 +27,8 @@ public class QuestionsActivity extends Activity {
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.question_layout);
+		
+		Alarm newAlarm1 = new Alarm();
 
 		SharedPreferences preferences = PreferenceManager
 				.getDefaultSharedPreferences(this.getBaseContext());
@@ -76,6 +79,10 @@ public class QuestionsActivity extends Activity {
 						showMessage("Kein externer Speicher vorhanden");
 						e.printStackTrace();
 					}
+					
+					Intent alarmIntent = new Intent(QuestionsActivity.this, Alarm.class);
+					startActivity(alarmIntent);
+					
 					finishActivity();
 				}
 			}
@@ -107,10 +114,16 @@ public class QuestionsActivity extends Activity {
 					showMessage("Kein externer Speicher vorhanden");
 					e.printStackTrace();
 				}
+				
+				Intent alarmIntent = new Intent(QuestionsActivity.this, Alarm.class);
+				startActivity(alarmIntent);
+				
 				finishActivity();
 			}
 		});
-
+		
+		
+		
 	}
 
 	/**

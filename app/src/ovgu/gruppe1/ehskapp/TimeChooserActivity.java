@@ -1,6 +1,7 @@
 package ovgu.gruppe1.ehskapp;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
 import android.os.Bundle;
@@ -158,6 +159,10 @@ public class TimeChooserActivity extends Activity {
 			mEditor.putInt("time4", chosen_time4);
 			mEditor.commit();
 			Toast.makeText(getApplicationContext(), "Alarm-Zeiten gespeichert", Toast.LENGTH_LONG).show();
+			
+			Intent alarmIntent = new Intent(TimeChooserActivity.this, Alarm.class);
+			startActivity(alarmIntent);
+			
 			finish();
 			}
 			else {
