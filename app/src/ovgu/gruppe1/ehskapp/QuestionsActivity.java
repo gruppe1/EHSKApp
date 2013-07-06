@@ -19,7 +19,7 @@ import android.widget.Toast;
  * Activity to let the user make his input to the asked questions
  * the answers will be stored in a .csv file on SD card 
  * 
- * @author Gruppe 1
+ * @author 1
  *
  */
 public class QuestionsActivity extends Activity {

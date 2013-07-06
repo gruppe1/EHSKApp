@@ -12,7 +12,7 @@ import android.preference.PreferenceManager;
  * 
  * TODO Reset funktioniert nicht, könnte an der onResume in Alarm liegen...
  * 
- * @author Gruppe 1
+ * @author 1
  * 
  */
 public class MainActivity extends Activity {

@@ -20,7 +20,7 @@ import android.preference.PreferenceManager;
  * Alarm Manager activity of the App
  * - setting new Alarm on create
  * 
- * @author Gruppe 1
+ * @author 1
  * 
  */
 public class Alarm extends Activity {

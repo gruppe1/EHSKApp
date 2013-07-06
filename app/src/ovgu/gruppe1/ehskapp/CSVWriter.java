@@ -15,7 +15,7 @@ import android.os.Environment;
  * -create new folders
  * -check if SD card is mounted and writable
  * 
- * @author Gruppe 1
+ * @author 1
  * 
  */
 public class CSVWriter {

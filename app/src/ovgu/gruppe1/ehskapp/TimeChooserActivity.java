@@ -21,7 +21,7 @@ import android.widget.ToggleButton;
  * -one out of 16 to 19 o'clock
  * -one out of 20 to 23 o'clock
  * 
- * @author Gruppe 1
+ * @author 1
  *
  */
 public class TimeChooserActivity extends Activity {
