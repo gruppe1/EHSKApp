@@ -2,25 +2,78 @@ package ovgu.gruppe1.ehskapp;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.content.SharedPreferences.Editor;
 import android.os.Bundle;
-import android.view.Menu;
+import android.preference.PreferenceManager;
+/*import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.widget.Button;
+import android.widget.Button;*/
 
 /**
- * Activity called first when the app starts and call other activities
+ * Activity started first an start other activities
+ * TODO wenn man app im betrieb startet sollte die TimeChooseActivity starten und nicht der Alarm,
+ * da er kein layout hat
  * @author Gruppe 1
- *
+ * 
  */
 public class MainActivity extends Activity {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_main);
+		// setContentView(R.layout.activity_main);
 
-		Button btn_usercode = (Button) findViewById(R.id.btn_usercode);
+		SharedPreferences preferences = PreferenceManager
+				.getDefaultSharedPreferences(this.getBaseContext());
+		String usercode = preferences.getString("usercode", "");
+		Editor edit = preferences.edit();
+		// Log.d("Main", ""+ usercode.length());
+
+		// checks if usercode exists in sharedPreferences
+		if (usercode.length() != 0) {
+
+			String file = usercode + ".csv";
+			// Log.d("Main", ""+ CSVWriter.existsFile(data));
+
+			/*
+			 * if usercode exists in sharedPrefs but there is noch csv file (app
+			 * was reseted) delete usercode in sharedPrefs (and start
+			 * UserCodeActivity)
+			 */
+			if (!CSVWriter.existsFile(file)) {
+				edit.clear();
+				edit.commit();
+
+				Intent UserCodeIntent = new Intent(this, UserCodeActivity.class);
+				startActivity(UserCodeIntent);
+			} else {// csv file exists -> start TimeChooserActivity
+				Intent TimeChooserIntent = new Intent(this,
+						TimeChooserActivity.class);
+				startActivity(TimeChooserIntent);
+			}
+
+		} else {/*
+				 * no usercode in sharedPrefs i.e. first start of app or reseted
+				 * -> start UserCodeActivity
+				 */
+			Intent UserCodeIntent = new Intent(this, UserCodeActivity.class);
+			startActivity(UserCodeIntent);
+		}
+		
+		/*preferences = PreferenceManager.getDefaultSharedPreferences(this.getBaseContext());
+		usercode = preferences.getString("usercode", "");
+		
+		
+		if (usercode.length() == 0) {
+			
+			Intent UserCodeIntent = new Intent(this, UserCodeActivity.class);
+			startActivity(UserCodeIntent);
+		}*/
+				
+
+		/*Button btn_usercode = (Button) findViewById(R.id.btn_usercode);
 		btn_usercode.setOnClickListener(new OnClickListener() {
 
 
@@ -41,46 +94,18 @@ public class MainActivity extends Activity {
 			@Override
 			public void onClick(View v) {
 
-				/*String[] str1 = { "Code", "Datum", "Alarmzeit", "Antwortzeit",
-						"Abbruch", "Kontakte", "Stunden", "Minuten" };
-				String[] str2 = { "lbrht", "22.06.2013", "21:23", "21:24", "0",
-						"0", "0", "0" };
-				try {
-					CSVWriter.writeLine(str1, Environment.getExternalStorageDirectory().getPath()+"/Probandencode.csv");
-					CSVWriter.writeLine(str2, Environment.getExternalStorageDirectory().getPath()+"/Probandencode.csv");
-				} catch (FileNotFoundException e) {
-					// TODO Auto-generated catch block
-					Toast.makeText(getApplicationContext(), "External SD card not mounted", Toast.LENGTH_LONG).show();
-					e.printStackTrace();				
-				}*/
-				
-				
-//				
-//				Intent intent = new Intent(MainActivity.this,
-//						QuickPrefsActivity.class);
-//				startActivity(intent);
+
 			}
 		});
-
-		Button btn_time_chooser = (Button) findViewById(R.id.btn_time_chooser);
-		btn_time_chooser.setOnClickListener(new OnClickListener() {
+	
+		Button btn_popup = (Button) findViewById(R.id.btn_time_chooser);
+		btn_popup.setOnClickListener(new OnClickListener() {
 
 
 			@Override
 			public void onClick(View v) {
-				Intent time_chooserIntent = new Intent(MainActivity.this, TimeChooserActivity.class);
-				startActivity(time_chooserIntent);
-			}
-		});
-		
-		Button btn_alarm = (Button) findViewById(R.id.btn_alarm);
-		btn_alarm.setOnClickListener(new OnClickListener() {
-
-
-			@Override
-			public void onClick(View v) {
-				Intent alarmIntent = new Intent(MainActivity.this, Alarm.class);
-				startActivity(alarmIntent);
+				Intent popupIntent = new Intent(MainActivity.this, TimeChooserActivity.class);
+				startActivity(popupIntent);
 			}
 		});
 		
@@ -93,32 +118,9 @@ public class MainActivity extends Activity {
 				Intent popupIntent = new Intent(MainActivity.this, QuestionsActivity.class);
 				startActivity(popupIntent);
 			}
-		});
-
+		});*/
 		
+		
+		finish();
 	}
-
-	@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
-		// Inflate the menu; this adds items to the action bar if it is present.
-		//getMenuInflater().inflate(R.menu.activity_main, menu);
-		return true;
-	}
-	
-	/*public boolean onOptionsItemSelected(MenuItem item) {
-	    switch(item.getItemId()) {
-	        case R.id.menuitem_preferences:
-	            Intent intentPreferences = new Intent(MainActivity.this, QuickPrefsActivity.class);
-	            startActivity(intentPreferences);
-	            return true;
-	        case R.id.menuitem_popup:
-	        	Intent intentPopup = new Intent(MainActivity.this, PopupActivity.class);
-	            startActivity(intentPopup);
-	            return true;
-	    }
-
-
-	    return super.onOptionsItemSelected(item);
-	} */
-
 }

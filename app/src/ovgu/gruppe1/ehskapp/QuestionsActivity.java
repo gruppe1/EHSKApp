@@ -33,8 +33,6 @@ public class QuestionsActivity extends Activity {
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.question_layout);
-		
-		Alarm newAlarm1 = new Alarm();
 
 		SharedPreferences preferences = PreferenceManager
 				.getDefaultSharedPreferences(this.getBaseContext());
@@ -127,9 +125,7 @@ public class QuestionsActivity extends Activity {
 				finishActivity();
 			}
 		});
-		
-		
-		
+			
 	}
 
 	/**

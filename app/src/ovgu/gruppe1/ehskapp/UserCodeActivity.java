@@ -3,6 +3,7 @@ package ovgu.gruppe1.ehskapp;
 import java.io.FileNotFoundException;
 import java.util.Locale;
 import android.app.Activity;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
 import android.os.Bundle;
@@ -86,6 +87,9 @@ public class UserCodeActivity extends Activity {
 			showMessage("Kein externer Speicher vorhanden");
 			e.printStackTrace();
 		}
+		
+		Intent TimeChooserIntent = new Intent(this, TimeChooserActivity.class);
+		startActivity(TimeChooserIntent);
 		
 		this.finish();
 	}
