@@ -14,6 +14,15 @@ import android.widget.CompoundButton.OnCheckedChangeListener;
 import android.widget.Toast;
 import android.widget.ToggleButton;
 
+/**
+ * Activity to let the user choose four alarm times a day
+ * -one out of 9 to 12 o'clock
+ * -one out of 13 to 15 o'clock
+ * -one out of 16 to 19 o'clock
+ * -one out of 20 to 23 o'clock
+ * @author Gruppe 1
+ *
+ */
 public class TimeChooserActivity extends Activity {
 
 	protected static final String TAG = "TimeChooserActivity";

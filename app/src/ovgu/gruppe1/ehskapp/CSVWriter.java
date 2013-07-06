@@ -7,6 +7,13 @@ import java.io.IOException;
 import android.os.Environment;
 
 /**
+ * Class for the IO Management of the App
+ * (only access to external SD card not to internal memory)
+ * -create new empty .csv file
+ * -add line to file
+ * -check whether file exists or not
+ * -create new folders
+ * -check if SD card is mounted and writable
  * 
  * @author Gruppe 1
  * 
@@ -65,7 +72,7 @@ public class CSVWriter {
 	}
 
 	/**
-	 * 
+	 * Public writeLine function with ';' as standard separator
 	 * @param line
 	 * @param filename
 	 * @throws FileNotFoundException
@@ -76,9 +83,9 @@ public class CSVWriter {
 	}
 
 	/**
-	 * 
+	 * Checks whether file at given path exists 
 	 * @param path
-	 * @return
+	 * @return true if file exits else false
 	 */
 	public static boolean existsFile(String path) {
 		File file = new File(Environment.getExternalStorageDirectory()
@@ -87,8 +94,8 @@ public class CSVWriter {
 	}
 
 	/**
-	 * Add a Directory on SD-card
-	 * 
+	 * Add a Directory on SD-card with all new subfolders in the given path that
+	 * not exist (e.g. existingFolder/newFolder1/newFolder2)
 	 * @param path
 	 * @throws IOException
 	 */
@@ -107,7 +114,7 @@ public class CSVWriter {
 	}
 
 	/**
-	 * 
+	 * Checks if an external SD card is mounted and writable
 	 * @return true if external storage is writable (sd card is mounted), false
 	 *         instead
 	 */

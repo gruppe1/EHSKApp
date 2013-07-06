@@ -8,6 +8,11 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 
+/**
+ * Activity called first when the app starts and call other activities
+ * @author Gruppe 1
+ *
+ */
 public class MainActivity extends Activity {
 
 	@Override

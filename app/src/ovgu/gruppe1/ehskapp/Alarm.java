@@ -17,6 +17,11 @@ import android.os.SystemClock;
 import android.preference.PreferenceManager;
 import android.util.Log;
 
+/**
+ * TODO
+ * @author Gruppe 1
+ *
+ */
 public class Alarm extends Activity {
 
 	@Override
@@ -80,6 +85,9 @@ public class Alarm extends Activity {
 
 	AlarmManager am;
 
+	/**
+	 * TODO
+	 */
 	private void setup() {
 
 		br = new BroadcastReceiver() {
@@ -112,6 +120,10 @@ public class Alarm extends Activity {
 
 	}
 
+	/**
+	 * TODO
+	 * @return
+	 */
 	public static long getTime() {
 		long time = System.currentTimeMillis();
 
@@ -121,7 +133,11 @@ public class Alarm extends Activity {
 
 		return time;
 	}
-			
+	
+	/**
+	 * TODO
+	 * @param hour
+	 */
 	public void setAlarm(long hour) {
 		
 		Log.d("Alarm set", "new Alarm");

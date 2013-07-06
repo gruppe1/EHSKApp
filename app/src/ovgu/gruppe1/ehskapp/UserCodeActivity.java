@@ -13,6 +13,12 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+/**
+ * Activity to let the user input his usercode consisting of five letters
+ * an empty .csv file named as the usercode will be created on SD card
+ * @author Gruppe 1
+ *
+ */
 public class UserCodeActivity extends Activity {
 
 	EditText textField1, textField2, textField3, textField4, textField5;
@@ -51,7 +57,12 @@ public class UserCodeActivity extends Activity {
 		});
 
 	}
-
+	
+	/**
+	 * shows message to the user
+	 * 
+	 * @param message
+	 */
 	private void showMessage(String message) {
 		Toast.makeText(getApplicationContext(), message, Toast.LENGTH_LONG).show();
 	}
