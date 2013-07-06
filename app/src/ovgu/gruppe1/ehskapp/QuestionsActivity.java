@@ -72,7 +72,7 @@ public class QuestionsActivity extends Activity {
 					Date date = new Date();
 					line[1] = new SimpleDateFormat("dd.MM.yyyy", Locale
 							.getDefault()).format(date);// date
-					line[2] = "" + alertTime;// alert time
+					line[2] = "" + alertTime + ":00";// alert time
 					line[3] = new SimpleDateFormat("hh:mm", Locale.getDefault())
 							.format(date);// answer
 					// time
@@ -115,7 +115,7 @@ public class QuestionsActivity extends Activity {
 				Date date = new Date();
 				line[1] = new SimpleDateFormat("dd.MM.yyyy", Locale
 						.getDefault()).format(date);// date
-				line[2] = "" + alertTime;// alert time
+				line[2] = "" + alertTime + ":00";// alert time
 				line[3] = "-77";// answer time
 				line[4] = "1";// was aborted
 				line[5] = "-77";
