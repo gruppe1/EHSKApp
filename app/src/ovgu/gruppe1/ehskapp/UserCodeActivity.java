@@ -17,6 +17,7 @@ import android.widget.Toast;
 /**
  * Activity to let the user input his usercode consisting of five letters
  * an empty .csv file named as the usercode will be created on SD card
+ * 
  * @author Gruppe 1
  *
  */

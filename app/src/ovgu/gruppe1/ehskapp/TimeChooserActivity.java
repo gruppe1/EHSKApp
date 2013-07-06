@@ -20,6 +20,7 @@ import android.widget.ToggleButton;
  * -one out of 13 to 15 o'clock
  * -one out of 16 to 19 o'clock
  * -one out of 20 to 23 o'clock
+ * 
  * @author Gruppe 1
  *
  */
@@ -295,5 +296,12 @@ public class TimeChooserActivity extends Activity {
 	            }
 	        }
 	    }
+	};
+	
+	public void onBackPressed() {
+		Intent startMain = new Intent(Intent.ACTION_MAIN);
+		startMain.addCategory(Intent.CATEGORY_HOME);
+		startMain.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+		startActivity(startMain);
 	};
 }

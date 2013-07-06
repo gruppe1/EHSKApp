@@ -18,6 +18,7 @@ import android.widget.Toast;
 /**
  * Activity to let the user make his input to the asked questions
  * the answers will be stored in a .csv file on SD card 
+ * 
  * @author Gruppe 1
  *
  */
@@ -56,6 +57,10 @@ public class QuestionsActivity extends Activity {
 				numberOfContacts = numberOfContactsView.getText().toString();
 				hours = hoursView.getText().toString();
 				minutes = minutesView.getText().toString();
+				
+				SharedPreferences preferences = PreferenceManager
+						.getDefaultSharedPreferences(getApplicationContext());
+				int alertTime = preferences.getInt("CalledTime", -77);
 
 				if (hours.equals("") || minutes.equals("")
 						|| numberOfContacts.equals("")) {
@@ -67,7 +72,7 @@ public class QuestionsActivity extends Activity {
 					Date date = new Date();
 					line[1] = new SimpleDateFormat("dd.MM.yyyy", Locale
 							.getDefault()).format(date);// date
-					line[2] = "";// alert time
+					line[2] = "" + alertTime;// alert time
 					line[3] = new SimpleDateFormat("hh:mm", Locale.getDefault())
 							.format(date);// answer
 					// time
@@ -75,6 +80,7 @@ public class QuestionsActivity extends Activity {
 					line[5] = numberOfContacts;
 					line[6] = hours;
 					line[7] = minutes;
+					
 					String filename = usercode + ".csv";
 					try {
 						CSVWriter.writeLine(line, filename);
@@ -99,18 +105,23 @@ public class QuestionsActivity extends Activity {
 
 			@Override
 			public void onClick(View v) {
+				SharedPreferences preferences = PreferenceManager
+						.getDefaultSharedPreferences(getApplicationContext());
+				int alertTime = preferences.getInt("CalledTime", -77);
+				
 				String[] line = new String[8];// data which will be written into
 												// a csv file
 				line[0] = usercode;// user code
 				Date date = new Date();
 				line[1] = new SimpleDateFormat("dd.MM.yyyy", Locale
 						.getDefault()).format(date);// date
-				line[2] = "";// TODO: alert time
+				line[2] = "" + alertTime;// alert time
 				line[3] = "-77";// answer time
 				line[4] = "1";// was aborted
 				line[5] = "-77";
 				line[6] = "-77";
 				line[7] = "-77";
+				
 				String filename = usercode + ".csv";
 				try {
 					CSVWriter.writeLine(line, filename);

@@ -63,6 +63,23 @@ public class Alarm extends Activity {
 		}
 		setup();
 	}
+	
+	@Override
+	protected void onResume() {
+		super.onResume();
+
+		SharedPreferences preferences = PreferenceManager
+				.getDefaultSharedPreferences(this.getBaseContext());
+		String usercode = preferences.getString("usercode", "");
+
+		if (!CSVWriter.existsFile(usercode + ".csv")) {
+			onDestroy();
+		} else {
+			Intent TimeChooserIntent = new Intent(this,
+					TimeChooserActivity.class);
+			startActivity(TimeChooserIntent);
+		}
+	}
 
 	final static private long ONE_SECOND = 1000;
 	final static private long ONE_MINUTE = ONE_SECOND * 60;
