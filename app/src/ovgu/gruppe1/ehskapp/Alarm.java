@@ -33,6 +33,7 @@ public class Alarm extends Activity {
 				.getDefaultSharedPreferences(getApplicationContext());
 		Editor mEditor = mPrefs.edit();
 
+		//if getTime() == timeX, nothing happens...
 		if (getTime() < mPrefs.getInt("time1", 0) * ONE_HOUR
 				|| getTime() > mPrefs.getInt("time4", 0) * ONE_HOUR) {
 			int startTime = mPrefs.getInt("time1", 0);
@@ -106,7 +107,7 @@ public class Alarm extends Activity {
 				if (notification == null) {
 					// alert is null, using backup
 					notification = RingtoneManager
-							.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
+							.getDefaultUri(RingtoneManager.TYPE_ALARM);
 					if (notification == null) { // I can't see this ever being
 												// null (as always have a
 												// default notification) but
