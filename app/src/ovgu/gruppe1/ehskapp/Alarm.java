@@ -36,32 +36,31 @@ public class Alarm extends Activity {
 		if (getTime() < mPrefs.getInt("time1", 0) * ONE_HOUR
 				|| getTime() > mPrefs.getInt("time4", 0) * ONE_HOUR) {
 			int startTime = mPrefs.getInt("time1", 0);
-			mEditor.putInt("CalledTime", 1);
+			mEditor.putInt("CalledTime", startTime);
 			mEditor.commit();
 			setup();
 			setAlarm(startTime);
 		} else if (mPrefs.getInt("time1", 0) * ONE_HOUR < getTime()
 				&& getTime() < mPrefs.getInt("time2", 0) * ONE_HOUR) {
 			int startTime = mPrefs.getInt("time2", 0);
-			mEditor.putInt("CalledTime", 2);
+			mEditor.putInt("CalledTime", startTime);
 			mEditor.commit();
 			setup();
 			setAlarm(startTime);
 		} else if (mPrefs.getInt("time2", 0) * ONE_HOUR < getTime()
 				&& getTime() < mPrefs.getInt("time3", 0) * ONE_HOUR) {
 			int startTime = mPrefs.getInt("time3", 0);
-			mEditor.putInt("CalledTime", 3);
+			mEditor.putInt("CalledTime", startTime);
 			mEditor.commit();
 			setup();
 			setAlarm(startTime);
 		} else {
 			int startTime = mPrefs.getInt("time4", 0);
-			mEditor.putInt("CalledTime", 4);
+			mEditor.putInt("CalledTime", startTime);
 			mEditor.commit();
 			setup();
 			setAlarm(startTime);
 		}
-		setup();
 	}
 	
 	@Override
