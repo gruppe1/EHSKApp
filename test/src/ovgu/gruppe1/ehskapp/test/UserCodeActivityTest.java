@@ -48,7 +48,7 @@ public class UserCodeActivityTest extends ActivityInstrumentationTestCase2<UserC
 		}
 	}
 	
-	public void testThereAreOnlyNumbers(){
+	public void testThereNoOnlyNumbers(){
 		assertTrue(thereAreNoNumbers(textField1));
 		assertTrue(thereAreNoNumbers(textField2));
 		assertTrue(thereAreNoNumbers(textField3));
