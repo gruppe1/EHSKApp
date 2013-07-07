@@ -73,7 +73,7 @@ public class Alarm extends Activity {
 		String usercode = preferences.getString("usercode", "");
 
 		if (!CSVWriter.existsFile(usercode + ".csv")) {
-			onDestroy();
+			finish();
 		} else {
 			Intent TimeChooserIntent = new Intent(this,
 					TimeChooserActivity.class);
@@ -146,9 +146,7 @@ public class Alarm extends Activity {
 	public static long getTime() {
 		long time = System.currentTimeMillis();
 
-		while (time > ONE_DAY) {
-			time = time - ONE_DAY;
-		}
+		time %= ONE_DAY;//milliseconds of current day
 
 		return time;
 	}
